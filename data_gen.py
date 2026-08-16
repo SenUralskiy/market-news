@@ -30,16 +30,13 @@ DEEPSEEK_FLASH = os.getenv("DEEPSEEK_FLASH_MODEL") or "deepseek-v4-flash"
 UA = {"User-Agent": "market-news/1.0"}
 
 INDEX_MAP = {"IMOEX": "Индекс МосБиржи", "RTSI": "Индекс РТС", "MOEX10": "Индекс МосБиржи 10"}
-FX_MAP = {
-    "USD000UTSTOM": ("USD/RUB", "Доллар США", "fx", 2),
-    "EUR_RUB__TOM": ("EUR/RUB", "Евро", "fx", 2),
-    "CNY000000TOD": ("CNY/RUB", "Китайский юань", "fx", 2),
-    "HKDRUB_TOM": ("HKD/RUB", "Гонконгский доллар", "fx", 2),
-    "GLDRUB_TOM": ("GOLD", "Золото, ₽", "metal", 1),
-    "SLVRUB_TOM": ("SILVER", "Серебро, ₽", "metal", 1),
+METALS_MAP = {
+    "GLDRUB_TOM": ("GOLD", "Золото, ₽/г", 1),
+    "SLVRUB_TOM": ("SILVER", "Серебро, ₽/г", 1),
+    "PLDRUB_TOM": ("PALLADIUM", "Палладий, ₽/г", 1),
+    "PLTRUB_TOM": ("PLATINUM", "Платина, ₽/г", 1),
 }
-STOCK_FILTER = {"SBER", "GAZP", "LKOH", "ROSN", "GMKN", "YDEX", "T", "MGNT", "MTSS", "NVTK", "ALRS",
-                "CHMF", "TATN", "PLZL", "VTBR", "SNGS", "AFLT", "OZON", "MOEX", "POSI", "RUAL", "VKCO"}
+MAJOR_FX = ["USD", "EUR", "CNY", "GBP", "JPY", "CHF", "HKD"]
 
 RSS_SOURCES = [
     {"name": "TASS", "url": "https://tass.ru/rss/v2.xml"},
@@ -123,42 +120,46 @@ def indexes() -> list[dict]:
     return [out[k] for k in INDEX_MAP if k in out]
 
 
-# ── валюты и металлы (валютный рынок MOEX + фолбэк на курс ЦБ) ──
-def cbr_fx() -> dict[str, float]:
+# ── валюты (все по курсу ЦБ) и металлы (валютный рынок MOEX) ──
+def all_fx() -> list[dict]:
     import xml.etree.ElementTree as ET
 
     try:
         r = requests.get("https://www.cbr.ru/scripts/XML_daily.asp", headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
         r.encoding = "windows-1251"
         root = ET.fromstring(r.content)
-        codes = {"R01235": "USD/RUB", "R01239": "EUR/RUB", "R01375": "CNY/RUB", "R01200": "HKD/RUB"}
-        out = {}
+        items = []
         for val in root.findall("Valute"):
-            cid = val.get("ID")
-            if cid in codes:
-                out[codes[cid]] = float(val.find("Value").text.replace(",", "."))
-        return out
+            code = (val.find("CharCode").text or "").strip()
+            name = (val.find("Name").text or "").strip()
+            nominal = float(val.find("Nominal").text.replace(",", "."))
+            value = float(val.find("Value").text.replace(",", "."))
+            price = round(value / nominal, 4)
+            dec = 2 if price >= 10 else (3 if price >= 1 else 4)
+            items.append({"sym": code, "name": name, "price": price, "chg": None, "dec": dec})
+        def rank(x: dict) -> tuple[int, str]:
+            return (MAJOR_FX.index(x["sym"]) if x["sym"] in MAJOR_FX else len(MAJOR_FX), x["name"])
+        items.sort(key=rank)
+        return items
     except Exception:
-        return {}
+        return []
 
 
-def fx_metals() -> tuple[list[dict], list[dict]]:
+def metals() -> list[dict]:
     j = iss_json("/engines/currency/markets/selt/securities.json")
     ci = j["marketdata"]["columns"]
     secid_i = ci.index("SECID")
     md = {m[secid_i]: m for m in j["marketdata"]["data"]}
-    cbr = cbr_fx()
-    fx, metals = [], []
-    for secid, (sym, name, kind, dec) in FX_MAP.items():
+    out = []
+    for secid, (sym, name, dec) in METALS_MAP.items():
         m = md.get(secid)
         price = m[ci.index("LAST")] if m and "LAST" in ci else None
+        if price is None and m and "CLOSEPRICE" in ci:
+            price = m[ci.index("CLOSEPRICE")]
         chg = m[ci.index("LASTCHANGEPRCNT")] if m and "LASTCHANGEPRCNT" in ci else None
-        if price is None and kind == "fx" and sym in cbr:
-            price = cbr[sym]
-            chg = None
-        item = {"sym": sym, "name": name, "price": price, "chg": chg, "dec": dec}
-        (metals if kind == "metal" else fx).append(item)
-    return fx, metals
+        if price is not None:
+            out.append({"sym": sym, "name": name, "price": price, "chg": chg, "dec": dec})
+    return out
 
 
 # ── товары (нефть, газ) ──
@@ -185,24 +186,34 @@ def commodities() -> list[dict]:
     return out
 
 
-# ── акции ──
-def top_stocks(limit: int = 12) -> list[dict]:
+# ── акции (все ликвидные + волатильность) ──
+def all_stocks() -> list[dict]:
     j = iss_json("/engines/stock/markets/shares/boards/TQBR/securities.json")
     sec = pd.DataFrame(j["securities"]["data"], columns=j["securities"]["columns"])
     md = pd.DataFrame(j["marketdata"]["data"], columns=j["marketdata"]["columns"])
-    md = md[["SECID", "LAST", "LASTCHANGEPRCNT", "VALTODAY"]]
-    sec = sec[["SECID", "SHORTNAME"]]
+    sec = sec[["SECID", "SHORTNAME", "PREVPRICE"]]
+    md = md[["SECID", "LAST", "LASTCHANGEPRCNT", "LASTTOPREVPRICE", "VALTODAY", "HIGH", "LOW"]]
     base = sec.merge(md, on="SECID", how="inner")
-    base = base[base["SECID"].isin(STOCK_FILTER)]
-    base = base[base["VALTODAY"].notna() & (base["VALTODAY"] > 0)]
-    base = base.sort_values("VALTODAY", ascending=False).head(limit)
+    base = base[base["VALTODAY"].notna() & (base["VALTODAY"] > 0) & base["LAST"].notna() & (base["LAST"] > 0)]
+    base = base.sort_values("VALTODAY", ascending=False)
     out = []
     for _, r in base.iterrows():
         price = float(r["LAST"])
+        raw_chg = r["LASTTOPREVPRICE"] if "LASTTOPREVPRICE" in base.columns else None
+        if raw_chg is None or pd.isna(raw_chg):
+            raw_chg = r["LASTCHANGEPRCNT"] if not pd.isna(r["LASTCHANGEPRCNT"]) else None
+        chg = float(raw_chg) if raw_chg is not None and not pd.isna(raw_chg) else None
+        volatility = None
+        try:
+            prev, hi, lo = r["PREVPRICE"], r["HIGH"], r["LOW"]
+            if prev and hi and lo and not pd.isna(hi) and not pd.isna(lo) and float(prev) > 0:
+                volatility = round((float(hi) - float(lo)) / float(prev) * 100, 2)
+        except Exception:
+            pass
         out.append({
-            "sym": r["SECID"], "name": r["SHORTNAME"], "price": price,
-            "chg": float(r["LASTCHANGEPRCNT"]), "dec": 0 if price >= 1000 else 2,
-            "vol": f"{float(r['VALTODAY']) / 1e9:.1f} млрд ₽",
+            "sym": r["SECID"], "name": r["SHORTNAME"], "price": price, "chg": chg,
+            "dec": 0 if price >= 1000 else 2,
+            "vol": f"{float(r['VALTODAY']) / 1e9:.2f} млрд ₽", "volatility": volatility,
         })
     return out
 
@@ -459,30 +470,35 @@ def build_digest(news: list[dict]) -> str:
 
 
 def main() -> None:
-    fx, metals = fx_metals()
-    stocks = top_stocks()
+    stocks = all_stocks()
+    gainers = sorted([s for s in stocks if s["chg"] is not None and s["chg"] > 0], key=lambda x: -x["chg"])[:10]
+    losers = sorted([s for s in stocks if s["chg"] is not None and s["chg"] < 0], key=lambda x: x["chg"])[:10]
+    volatile = sorted([s for s in stocks if s["volatility"] is not None], key=lambda x: -x["volatility"])[:10]
     news = build_news()
     digest = build_digest(news)
-    movers = sorted([s for s in stocks if s["chg"] is not None], key=lambda x: -x["chg"])
     data = {
         "generated_at": datetime.now().strftime("%d.%m.%Y %H:%M"),
         "key_rate": key_rate().get("rate"),
         "indices": indexes(),
-        "fx": fx,
-        "metals": metals,
+        "fx": all_fx(),
+        "metals": metals(),
         "commodities": commodities(),
         "stocks": stocks,
+        "gainers": gainers,
+        "losers": losers,
+        "volatile": volatile,
         "news": news,
         "digest": digest,
         "calendar": calendar(),
         "volume": round(total_volume() / 1e9, 1),
-        "movers_up": [m for m in movers[:4]],
-        "movers_down": [m for m in movers[-4:]][::-1],
+        "movers_up": gainers[:4],
+        "movers_down": losers[:4],
     }
     (SITE_DIR / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"[data] индексов {len(data['indices'])}, акций {len(stocks)}, валют {len(fx)}, металлов {len(metals)}, "
-          f"товаров {len(data['commodities'])}, новостей {len(news)} (срочных {sum(1 for n in news if n['urgent'])}), "
-          f"дивидендов {len(data['calendar'])}, сводка {'есть' if digest else 'нет'}")
+    print(f"[data] индексов {len(data['indices'])}, акций {len(stocks)}, валют {len(data['fx'])}, "
+          f"металлов {len(data['metals'])}, товаров {len(data['commodities'])}, новостей {len(news)} "
+          f"(срочных {sum(1 for n in news if n['urgent'])}), дивидендов {len(data['calendar'])}, "
+          f"сводка {'есть' if digest else 'нет'}")
 
 
 if __name__ == "__main__":

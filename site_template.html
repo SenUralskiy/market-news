@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Рынок сегодня — биржевой дайджест</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="Биржевой дайджест: котировки МосБиржи, новости рынка с оценкой ИИ, индексы, валюты, металлы и дивиденды. Обновляется каждые 5 минут.">
+<meta property="og:title" content="Рынок сегодня — биржевой дайджест">
+<meta property="og:description" content="Котировки, индексы и новости рынка с оценкой ИИ. Обновляется автоматически.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index,follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -92,6 +98,15 @@ section{padding:3.4rem 0}
 .idx-top{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--fm);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .idx-val{font-family:var(--fm);font-size:1.65rem;font-weight:700;margin:.3rem 0 .15rem}
 .idx-chg{font-family:var(--fm);font-size:.8rem}
+.leaders{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1.6rem}
+.lead-col{border:1px solid var(--line);background:var(--panel)}
+.lead-col .h{padding:.6rem .9rem;border-bottom:1px solid var(--line);font-family:var(--fm);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.lead-col .h.g{color:var(--up)} .lead-col .h.l{color:var(--down)} .lead-col .h.v{color:var(--accent)}
+.lead-row{display:flex;justify-content:space-between;gap:.5rem;padding:.36rem .9rem;font-family:var(--fm);font-size:.74rem;border-bottom:1px solid var(--line)}
+.lead-row:last-child{border-bottom:0}
+.lead-row b{letter-spacing:.04em}
+.lead-row em{font-style:normal;font-weight:600}
+@media(max-width:900px){.leaders{grid-template-columns:1fr}}
 .tabs{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.3rem}
 .tab{font-family:var(--fm);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:.45rem .95rem;cursor:pointer;background:none;transition:.25s}
 .tab:hover{color:var(--text);border-color:var(--line2)}
@@ -257,8 +272,9 @@ canvas{display:block;width:100%}
     <span class="sec-idx">02</span>
     <h2>Котировки</h2>
     <span class="sec-line"></span>
-    <span class="sec-note">МосБиржа · T-Bank Invest</span>
+    <span class="sec-note">МосБиржа · ЦБ</span>
   </div>
+  <div class="leaders" id="leaders"></div>
   <div class="tabs">
     <button class="tab active" data-filter="all">Все</button>
     <button class="tab" data-filter="index">Индексы</button>
@@ -415,6 +431,15 @@ function idxCard(sym,label){
     ${lead.text?`<p class="dek">${esc(lead.text)}</p>`:''}
     <div class="lead-meta" style="margin-top:1rem;display:flex;gap:1rem;color:var(--dim);font-family:var(--fm);font-size:.7rem"><span>${esc(lead.source||'')}</span><span>${esc(lead.time||'')}</span></div>`;
   if(lead.url)$('#leadBody').insertAdjacentHTML('beforeend',`<a href="${esc(lead.url)}" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;color:var(--accent);font-size:.8rem">Читать источник →</a>`);
+})();
+
+/* таблица котировок */
+(function(){
+  const row=(a,val)=>`<div class="lead-row"><b>${esc(a.sym)}</b><span class="dim">${fmt(a.price,a.dec)}</span><em class="${cls(a.chg)}">${val}</em></div>`;
+  $('#leaders').innerHTML=
+    `<div class="lead-col"><div class="h g">▲ Топ роста</div>${(D.gainers||[]).map(a=>row(a,pct(a.chg))).join('')||'<div class="lead-row"><span class="dim">—</span></div>'}</div>`+
+    `<div class="lead-col"><div class="h l">▼ Топ падения</div>${(D.losers||[]).map(a=>row(a,pct(a.chg))).join('')||'<div class="lead-row"><span class="dim">—</span></div>'}</div>`+
+    `<div class="lead-col"><div class="h v">∿ Топ волатильности</div>${(D.volatile||[]).map(a=>row(a,a.volatility!=null?a.volatility.toFixed(2).replace('.',',')+' %':'—')).join('')||'<div class="lead-row"><span class="dim">—</span></div>'}</div>`;
 })();
 
 /* таблица котировок */
