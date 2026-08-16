@@ -255,6 +255,21 @@ def calendar() -> list[dict]:
 
 
 # ── новости ──
+def entry_image(e) -> str:
+    for enc in (e.get("enclosures") or []):
+        href = enc.get("href", "")
+        if href and (enc.get("type", "").startswith("image") or href.lower().endswith((".jpg", ".jpeg", ".png", ".webp"))):
+            return href
+    for l in (e.get("links") or []):
+        href = l.get("href", "")
+        if l.get("rel") == "enclosure" and href and href.lower().endswith((".jpg", ".jpeg", ".png", ".webp")):
+            return href
+    mc = e.get("media_content") or []
+    if mc:
+        return mc[0].get("url", "") or ""
+    return ""
+
+
 def fetch_rss() -> list[dict]:
     out = []
     for src in RSS_SOURCES:
@@ -263,7 +278,7 @@ def fetch_rss() -> list[dict]:
                 title = re.sub(r"\s+", " ", (e.get("title") or "")).strip()
                 if title:
                     out.append({"source": src["name"], "published_at": e.get("published") or e.get("updated") or "",
-                                "title": title, "url": e.get("link", "")})
+                                "title": title, "url": e.get("link", ""), "image": entry_image(e)})
         except Exception:
             continue
     return out
@@ -416,7 +431,7 @@ def build_news(max_items: int = 40) -> list[dict]:
             "cat": classify(title), "title": html.unescape(title), "text": notes.get(title, ""),
             "time": datetime.fromtimestamp(ts).strftime("%H:%M") if ts != now else "",
             "ts": int(ts), "urgent": any(k in title.lower() for k in URGENT_KEYWORDS),
-            "url": it.get("url", ""), "source": it.get("source", ""),
+            "url": it.get("url", ""), "source": it.get("source", ""), "image": it.get("image", ""),
         })
     mark_published(top)
     return out

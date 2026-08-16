@@ -114,6 +114,8 @@ tr.hide{display:none}
 .news-item h3{font-size:1.03rem;font-weight:600;line-height:1.4;transition:color .25s;cursor:pointer}
 .news-item h3:hover{color:var(--accent)}
 .news-item p{margin-top:.4rem;color:var(--muted);font-size:.88rem;line-height:1.55}
+.n-img{width:74px;height:48px;object-fit:cover;border-radius:5px;float:right;margin:2px 0 8px 14px;border:1px solid var(--line)}
+.lead-media img{width:100%;height:100%;object-fit:cover;display:block}
 .news-item.urgent::before{content:'';position:absolute;left:-16px;top:0;bottom:0;width:3px;background:var(--down)}
 .n-top{display:flex;gap:.7rem;align-items:center;margin-bottom:.45rem;flex-wrap:wrap}
 .badge-new{font-family:var(--fm);font-size:.6rem;letter-spacing:.2em;background:var(--down);color:#fff;padding:.15rem .45rem;font-weight:700}
@@ -406,6 +408,8 @@ function idxCard(sym,label){
   if(!lead)return;
   const [label,cls]=CATS[lead.cat]||CATS.company;
   if(lead.urgent)$('#leadUrgent').style.display='flex';
+  const leadImg=lead.image||'assets/hero.png';
+  $('#leadMedia').insertAdjacentHTML('afterbegin',`<img src="${esc(leadImg)}" alt="" onerror="this.remove()">`);
   $('#leadBody').innerHTML=`<span class="chip ${cls}" style="margin-top:.9rem">${label}</span>
     <h1 style="margin-top:.9rem">${esc(lead.title)}</h1>
     ${lead.text?`<p class="dek">${esc(lead.text)}</p>`:''}
@@ -437,9 +441,10 @@ function idxCard(sym,label){
     const src=n.source?`<span class="n-src">${esc(n.source)}</span>`:'';
     const time=n.time?`<span class="n-time">${esc(n.time)}</span>`:'';
     const url=n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener" style="color:var(--accent);font-size:.78rem">→ источник</a>`:'';
+    const thumb=n.image?`<img class="n-img" src="${esc(n.image)}" alt="" loading="lazy" onerror="this.remove()">`:'';
     return `<article class="news-item${n.urgent?' urgent':''}">
       <div>${time}${src}${n.urgent?'<span class="badge-new" style="margin-top:.5rem;display:inline-block">СРОЧНО</span>':''}</div>
-      <div><div class="n-top"><span class="chip ${cl}">${label}</span></div>
+      <div>${thumb}<div class="n-top"><span class="chip ${cl}">${label}</span></div>
       <h3>${esc(n.title)}</h3>${n.text?`<p>${esc(n.text)}</p>`:''}${url}</div>
     </article>`;
   }).join('');
@@ -457,9 +462,13 @@ function idxCard(sym,label){
 (function(){
   $('#digestText').textContent=D.digest||'Сводка недоступна.';
   const sm=(D.news||[]).filter(n=>n.urgent).slice(0,3);
-  $('#anaSide').innerHTML=sm.map(n=>`<article class="ana-sm"><div class="imgwrap">${CATS[n.cat]?CATS[n.cat][0].slice(0,1):'◆'}</div>
+  $('#anaSide').innerHTML=sm.map(n=>{
+    const catImg=n.image?`<img src="${esc(n.image)}" alt="" loading="lazy" onerror="this.parentNode.textContent='◆'" style="width:100%;height:100%;object-fit:cover">`
+      :`<img src="assets/cat_${n.cat}.png" alt="" onerror="this.remove()" style="width:100%;height:100%;object-fit:cover">`;
+    return `<article class="ana-sm"><div class="imgwrap">${catImg}</div>
     <div class="txt"><span class="chip ${(CATS[n.cat]||CATS.company)[1]}">${(CATS[n.cat]||CATS.company)[0]}</span>
-    <h3>${esc(n.title)}</h3>${n.text?`<p style="color:var(--muted);font-size:.82rem">${esc(n.text)}</p>`:''}</div></article>`).join('')
+    <h3>${esc(n.title)}</h3>${n.text?`<p style="color:var(--muted);font-size:.82rem">${esc(n.text)}</p>`:''}</div></article>`;
+  }).join('')
     ||'<article class="ana-sm"><div class="imgwrap">—</div><div class="txt"><h3>Срочных новостей нет</h3></div></article>';
 })();
 
