@@ -10,6 +10,7 @@
 <meta property="og:description" content="Котировки, индексы и новости рынка с оценкой ИИ. Обновляется автоматически.">
 <meta property="og:type" content="website">
 <meta name="robots" content="index,follow">
+<script data-goatcounter="https://senuralskiy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <meta name="google-site-verification" content="owM5Q81Xu4jYtWHukWvfcaj8PURr2nHD4d7RafU1UVE">
 <meta name="yandex-verification" content="e045496860c97c5d">
 <meta name="msvalidate.01" content="DDBBAAD0E4CA41B783D0B896860F90A5">
@@ -193,6 +194,16 @@ canvas{display:block;width:100%}
 .mini-chart .t{padding:.6rem .9rem;border-bottom:1px solid var(--line);font-family:var(--fm);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);display:flex;justify-content:space-between}
 .mini-chart canvas{display:block;width:100%}
 @media(max-width:900px){.mini-charts{grid-template-columns:1fr}}
+.modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center}
+.modal-bg{position:absolute;inset:0;background:rgba(0,0,0,.72)}
+.modal-box{position:relative;background:var(--panel);border:1px solid var(--line2);max-width:720px;width:92vw;max-height:86vh;overflow-y:auto;padding:1.5rem}
+.modal-close{position:absolute;top:.7rem;right:.7rem;background:none;border:1px solid var(--line2);color:var(--muted);width:34px;height:34px;cursor:pointer;font-size:1.1rem}
+.c-name b{cursor:pointer}
+.c-name b:hover{color:var(--accent)}
+.fund-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1.2rem;margin:.8rem 0}
+.fund-grid .f{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:.3rem 0;font-size:.85rem}
+.fund-grid .f span:first-child{color:var(--muted)}
+.fund-grid .f span:last-child{font-family:var(--fm)}
 @media(max-width:1080px){
  .lead-grid,.feed-wrap,.ana-grid,.cal-grid{grid-template-columns:1fr}
  .masthead .container{grid-template-columns:1fr}
@@ -359,6 +370,7 @@ canvas{display:block;width:100%}
     <span class="sec-line"></span>
     <span class="sec-note">с оценкой ИИ</span>
   </div>
+  <div style="margin-bottom:1rem"><input type="text" id="newsSearch" placeholder="Поиск по тикеру / тексту…" style="width:100%;max-width:420px"></div>
   <div class="tabs" id="newsTabs">
     <button class="tab active" data-cat="all">Все</button>
     <button class="tab" data-cat="macro">Макро</button>
@@ -390,10 +402,10 @@ canvas{display:block;width:100%}
         <div id="bondsList"></div>
       </div>
       <div class="panel" id="referralPanel" style="display:none">
-        <div class="panel-head"><span>Открой счёт</span></div>
+        <div class="panel-head"><span>Т-Банк</span></div>
         <div style="padding:1rem">
-          <p style="font-size:.85rem;color:var(--muted);margin-bottom:.8rem">Брокерский счёт в Т-Банке — акции, облигации, фонды, валюта.</p>
-          <a class="btn" href="#" id="referralLink" target="_blank" rel="noopener">Открыть счёт →</a>
+          <p style="font-size:.85rem;color:var(--muted);margin-bottom:.8rem">Продукты Т-Банка:</p>
+          <div id="referralList"></div>
           <div style="margin-top:.6rem;font-size:.66rem;color:var(--dim)">Реклама · не является ИИР</div>
         </div>
       </div>
@@ -412,6 +424,14 @@ canvas{display:block;width:100%}
     </div>
   </div>
 </footer>
+
+<div class="modal" id="companyModal" style="display:none">
+  <div class="modal-bg" id="modalBg"></div>
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
 
 <script>
 window.DATA = __DATA_JSON__;
@@ -555,7 +575,10 @@ function idxCard(sym,label){
   $('#moversUp').innerHTML=(D.movers_up||[]).map(row).join('');
   $('#moversDown').innerHTML=(D.movers_down||[]).map(row).join('');
   $('#bondsList').innerHTML=(D.bonds||[]).slice(0,6).map(b=>`<div class="mover"><b title="${esc(b.name)}">${esc(b.ticker)}</b><span class="dim mono">${esc(b.maturity)}</span><em class="up">${b.ytm}%</em></div>`).join('')||'<div style="color:var(--dim);padding:.6rem 1rem;font-size:.78rem">нет данных</div>';
-  if(D.referral_url){$('#referralPanel').style.display='';$('#referralLink').href=D.referral_url;}
+  if(D.referrals&&D.referrals.length){
+    $('#referralPanel').style.display='';
+    $('#referralList').innerHTML=D.referrals.map((r,i)=>`<a class="btn${i?' btn-ghost':''}" href="${esc(r.url)}" target="_blank" rel="noopener" style="display:block;margin-bottom:.5rem">${esc(r.label)} →</a>`).join('');
+  }
 })();
 
 /* сводка ИИ + сайдбар аналитики */
@@ -634,6 +657,70 @@ function idxCard(sym,label){
   mini('chartGold','vGold','gold',1,'');
   mini('chartUsd','vUsd','usd',2,'');
   mini('chartBrent','vBrent','brent',2,'');
+})();
+
+/* поиск + карточка компании */
+(function(){
+  const comps=D.companies||[];
+  const bySym={};comps.forEach(c=>bySym[c.sym]=c);
+
+  $('#newsSearch').addEventListener('input',function(){
+    const q=this.value.trim().toUpperCase();
+    document.querySelectorAll('#newsList .news-item').forEach(el=>{
+      const t=(el.querySelector('h3')?el.querySelector('h3').textContent:'').toUpperCase();
+      el.style.display=(!q||t.includes(q))?'':'none';
+    });
+  });
+
+  const FUND_ROWS=[['pe_ttm','P/E'],['pb_ttm','P/B'],['ev_ebitda','EV/EBITDA'],['net_debt_ebitda','Долг/EBITDA'],['roe','ROE, %'],['net_margin','Маржа, %'],['div_yield','Див. доходн., %'],['growth_1y','Рост выручки 1г, %'],['market_cap','Капитализация']];
+  function fmtFund(v,k){
+    if(v==null)return '—';
+    if(k==='market_cap')return (v/1e9).toFixed(1)+' млрд ₽';
+    if(typeof v==='number')return (Math.round(v*100)/100).toLocaleString('ru-RU');
+    return v;
+  }
+
+  function drawModal(cv,arr){
+    const dpr=devicePixelRatio||1,pad=6;
+    const W=cv.parentElement.clientWidth-20,H=180;
+    cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';
+    const ctx=cv.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
+    const mn=Math.min(...arr),mx=Math.max(...arr),r=(mx-mn)||1;
+    const X=i=>pad+i*(W-2*pad)/(arr.length-1),Y=v=>pad+(1-(v-mn)/r)*(H-2*pad);
+    const up=arr[arr.length-1]>=arr[0],col=up?'#25d07c':'#ff5d6c';
+    ctx.beginPath();arr.forEach((v,i)=>i?ctx.lineTo(X(i),Y(v)):ctx.moveTo(X(0),Y(v)));
+    ctx.strokeStyle=col;ctx.lineWidth=1.8;ctx.stroke();
+    ctx.lineTo(X(arr.length-1),H-pad);ctx.lineTo(X(0),H-pad);ctx.closePath();
+    ctx.fillStyle=up?'rgba(37,208,124,.08)':'rgba(255,93,108,.08)';ctx.fill();
+  }
+
+  function openCompany(sym){
+    const c=bySym[sym];
+    if(!c){
+      $('#modalBody').innerHTML=`<h2 style="font-family:var(--fd)">${esc(sym)}</h2><p style="color:var(--muted)">Нет данных по этой бумаге.</p>`;
+      $('#companyModal').style.display='flex';return;
+    }
+    const rows=FUND_ROWS.map(([k,l])=>`<div class="f"><span>${l}</span><span>${fmtFund(c.fund[k],k)}</span></div>`).join('');
+    const rel=(D.news||[]).filter(n=>n.title.toUpperCase().includes(sym.toUpperCase())).slice(0,5);
+    $('#modalBody').innerHTML=`
+      <h2 style="font-family:var(--fd);margin-bottom:.3rem">${esc(c.name)} <span style="color:var(--dim);font-size:.55em">${esc(c.sym)}</span></h2>
+      <div style="font-family:var(--fm);margin-bottom:1rem"><span class="big" style="color:var(--accent)">${fmt(c.price,c.dec)}</span> <span class="${cls(c.chg)}">${pct(c.chg)}</span></div>
+      <div class="fund-grid">${rows}</div>
+      <div style="margin:.8rem 0"><canvas id="modalChart" height="180"></canvas></div>
+      <h3 style="font-family:var(--fd);font-size:1rem;text-transform:uppercase;margin:.8rem 0 .4rem">Новости по бумаге</h3>
+      ${rel.length?rel.map(n=>`<div style="padding:.35rem 0;border-bottom:1px solid var(--line);font-size:.88rem">${sentEmoji(n)} ${esc(n.title)}</div>`).join(''):'<div style="color:var(--dim);font-size:.85rem">новостей нет</div>'}`;
+    $('#companyModal').style.display='flex';
+    const cv=document.getElementById('modalChart');
+    if(cv&&c.candles&&c.candles.length)drawModal(cv,c.candles);
+  }
+  function closeModal(){$('#companyModal').style.display='none';}
+  $('#modalClose').addEventListener('click',closeModal);
+  $('#modalBg').addEventListener('click',closeModal);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+  document.addEventListener('click',e=>{
+    const b=e.target.closest('#boardBody .c-name b');
+    if(b)openCompany(b.textContent.trim());
+  });
 })();
 
 /* часы + статус сессии (МСК) */

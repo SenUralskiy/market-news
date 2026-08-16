@@ -71,8 +71,13 @@ RU_MONTHS = ["", "ЯНВ", "ФЕВ", "МАР", "АПР", "МАЙ", "ИЮН", "И
 RU_WD = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"]
 TOP_TICKERS = ["SBER", "GAZP", "LKOH", "ROSN", "GMKN", "YDEX", "T", "MGNT", "MTSS", "NVTK", "ALRS", "CHMF", "TATN", "VTBR", "SNGS", "AFLT", "OZON", "PLZL"]
 
-# реферальная ссылка Т-Банка (партнёрская программа) — заполни, когда получишь
-REFERRAL_URL = os.getenv("TBANK_REFERRAL_URL", "")
+# реферальные ссылки Т-Банка (партнёрская программа)
+REFERRALS = [
+    {"label": "Инвестиции", "url": "https://tbank.ru/baf/9unAwim4Ub6"},
+    {"label": "Дебетовая карта", "url": "https://tbank.ru/baf/Z55Z1KCq4P"},
+    {"label": "Счёт для бизнеса", "url": "https://tbank.ru/baf/1Cu63zzchUN"},
+    {"label": "Связь", "url": "https://tbank.ru/baf/9vRXQ77eVTU"},
+]
 
 
 def iss_json(path: str, params: dict | None = None) -> dict:
@@ -293,6 +298,35 @@ def total_volume() -> float:
         return float(md["VALTODAY"].sum()) if "VALTODAY" in md else 0.0
     except Exception:
         return 0.0
+
+
+def share_candles(secid: str, days: int = 90) -> list[float]:
+    try:
+        from_date = (pd.Timestamp.today() - pd.Timedelta(days=days)).strftime("%Y-%m-%d")
+        r = iss_json(f"/engines/stock/markets/shares/securities/{secid}/candles.json",
+                     {"interval": 24, "from": from_date})
+        rows = r["candles"]["data"]
+        if not rows:
+            return []
+        ci = r["candles"]["columns"].index("close")
+        return [round(float(row[ci]), 2) for row in rows[-60:]]
+    except Exception:
+        return []
+
+
+def companies(limit: int = 20) -> list[dict]:
+    from concurrent.futures import ThreadPoolExecutor
+
+    tb = load_tbank()
+    fund = tb.get("fundamentals", {})
+    top = all_stocks()[:limit]
+
+    def fetch(s):
+        return {**s, "candles": share_candles(s["sym"]), "fund": fund.get(s["sym"], {})}
+
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        out = list(ex.map(fetch, top))
+    return out
 
 
 # ── данные с ПК через T-Bank (опционально, лежат в tbank_data.json) ──
@@ -615,7 +649,8 @@ def main() -> None:
         "volatile": volatile,
         "trends": trends(),
         "bonds": tb.get("bonds", []),
-        "referral_url": REFERRAL_URL,
+        "referrals": REFERRALS,
+        "companies": companies(),
         "news": news,
         "digest": digest,
         "calendar": calendar(),
