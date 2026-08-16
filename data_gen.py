@@ -314,6 +314,20 @@ def share_candles(secid: str, days: int = 90) -> list[float]:
         return []
 
 
+# метрики, где 0.0 от T-Bank означает «нет данных», а не реальный ноль
+ZERO_AS_NONE = ["pe_ttm", "pb_ttm", "ps_ttm", "ev_ebitda", "net_debt_ebitda", "debt_equity",
+                "roe", "roic", "roa", "net_margin", "growth_1y", "growth_3y", "growth_5y",
+                "div_yield", "div_payout", "beta", "free_float"]
+
+
+def clean_fund(f: dict) -> dict:
+    out = dict(f)
+    for k in ZERO_AS_NONE:
+        if out.get(k) == 0:
+            out[k] = None
+    return out
+
+
 def companies(limit: int = 20) -> list[dict]:
     from concurrent.futures import ThreadPoolExecutor
 
@@ -322,7 +336,7 @@ def companies(limit: int = 20) -> list[dict]:
     top = all_stocks()[:limit]
 
     def fetch(s):
-        return {**s, "candles": share_candles(s["sym"]), "fund": fund.get(s["sym"], {})}
+        return {**s, "candles": share_candles(s["sym"]), "fund": clean_fund(fund.get(s["sym"], {}))}
 
     with ThreadPoolExecutor(max_workers=8) as ex:
         out = list(ex.map(fetch, top))

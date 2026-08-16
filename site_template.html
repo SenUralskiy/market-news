@@ -700,12 +700,14 @@ function idxCard(sym,label){
       $('#modalBody').innerHTML=`<h2 style="font-family:var(--fd)">${esc(sym)}</h2><p style="color:var(--muted)">Нет данных по этой бумаге.</p>`;
       $('#companyModal').style.display='flex';return;
     }
-    const rows=FUND_ROWS.map(([k,l])=>`<div class="f"><span>${l}</span><span>${fmtFund(c.fund[k],k)}</span></div>`).join('');
+    const filled=FUND_ROWS.filter(([k])=>c.fund[k]!=null);
+    const rows=filled.map(([k,l])=>`<div class="f"><span>${l}</span><span>${fmtFund(c.fund[k],k)}</span></div>`).join('');
+    const fundHtml=rows||'<div style="color:var(--dim);font-size:.85rem">фундаментальных данных нет</div>';
     const rel=(D.news||[]).filter(n=>n.title.toUpperCase().includes(sym.toUpperCase())).slice(0,5);
     $('#modalBody').innerHTML=`
       <h2 style="font-family:var(--fd);margin-bottom:.3rem">${esc(c.name)} <span style="color:var(--dim);font-size:.55em">${esc(c.sym)}</span></h2>
       <div style="font-family:var(--fm);margin-bottom:1rem"><span class="big" style="color:var(--accent)">${fmt(c.price,c.dec)}</span> <span class="${cls(c.chg)}">${pct(c.chg)}</span></div>
-      <div class="fund-grid">${rows}</div>
+      <div class="fund-grid">${fundHtml}</div>
       <div style="margin:.8rem 0"><canvas id="modalChart" height="180"></canvas></div>
       <h3 style="font-family:var(--fd);font-size:1rem;text-transform:uppercase;margin:.8rem 0 .4rem">Новости по бумаге</h3>
       ${rel.length?rel.map(n=>`<div style="padding:.35rem 0;border-bottom:1px solid var(--line);font-size:.88rem">${sentEmoji(n)} ${esc(n.title)}</div>`).join(''):'<div style="color:var(--dim);font-size:.85rem">новостей нет</div>'}`;
