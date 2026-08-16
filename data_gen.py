@@ -366,38 +366,56 @@ def mark_published(items: list[dict]) -> None:
     STATE_PATH.write_text(json.dumps(data), encoding="utf-8")
 
 
-def _assess_chunk(items: list[dict]) -> dict[str, str]:
+def _assess_chunk(items: list[dict]) -> dict[str, dict]:
     if not DEEPSEEK_API_KEY:
         return {}
     from openai import OpenAI
 
     numbered = "\n".join(f"{i + 1}. {it['title']}" for i, it in enumerate(items))
     system = (
-        "Ты — финансовый редактор. Для каждой новости дай ровно одну короткую фразу (до 15 слов) "
-        "на русском: что произошло и что это значит для рынка. Верни ТОЛЬКО валидный JSON-объект "
-        'вида {"1": "фраза", ...} для ВСЕХ пунктов, без лишнего текста. Без выдуманных цифр.'
+        "Ты — финансовый редактор. Для каждой новости верни ТОЛЬКО валидный JSON-объект вида "
+        '{"1": {"t": "фраза", "s": "up", "i": 2}, ...} для ВСЕХ пунктов, где: '
+        't — оценка новости одной фразой (до 15 слов), что произошло и что это значит для рынка; '
+        's — настроение для рынка: "up" (позитив), "down" (негатив), "flat" (нейтрально); '
+        'i — влияние на рынок: 1 (низкое), 2 (среднее), 3 (высокое). '
+        'Без лишнего текста. Без выдуманных цифр.'
     )
     client = OpenAI(base_url=DEEPSEEK_BASE_URL, api_key=DEEPSEEK_API_KEY, timeout=90.0)
     try:
         r = client.chat.completions.create(
             model=DEEPSEEK_FLASH,
             messages=[{"role": "system", "content": system}, {"role": "user", "content": numbered}],
-            temperature=0.3, max_tokens=1500,
+            temperature=0.3, max_tokens=2000,
         )
         text = r.choices[0].message.content or ""
     except Exception:
         return {}
-    out: dict[str, str] = {}
+    out: dict[str, dict] = {}
     m = re.search(r"\{.*\}", text, re.S)
     if m:
         try:
-            for k, v in json.loads(m.group(0)).items():
+            parsed = json.loads(m.group(0))
+            for k, v in parsed.items():
                 try:
                     idx = int(str(k)) - 1
                 except ValueError:
                     continue
-                if 0 <= idx < len(items) and isinstance(v, str) and v.strip():
-                    out[items[idx]["title"]] = v.strip()
+                if not (0 <= idx < len(items)):
+                    continue
+                if isinstance(v, str):
+                    out[items[idx]["title"]] = {"note": v.strip(), "sent": "flat", "impact": 2}
+                elif isinstance(v, dict):
+                    note = (v.get("t") or "").strip()
+                    sent = str(v.get("s") or "flat").lower()
+                    if sent not in ("up", "down", "flat"):
+                        sent = "flat"
+                    try:
+                        impact = int(v.get("i", 2))
+                    except (TypeError, ValueError):
+                        impact = 2
+                    impact = max(1, min(3, impact))
+                    if note:
+                        out[items[idx]["title"]] = {"note": note, "sent": sent, "impact": impact}
             return out
         except json.JSONDecodeError:
             pass
@@ -407,12 +425,12 @@ def _assess_chunk(items: list[dict]) -> dict[str, str]:
         except ValueError:
             continue
         if 0 <= idx < len(items):
-            out[items[idx]["title"]] = v.encode().decode("unicode_escape")
+            out[items[idx]["title"]] = {"note": v.encode().decode("unicode_escape"), "sent": "flat", "impact": 2}
     return out
 
 
-def assess(items: list[dict]) -> dict[str, str]:
-    out: dict[str, str] = {}
+def assess(items: list[dict]) -> dict[str, dict]:
+    out: dict[str, dict] = {}
     for i in range(0, len(items), 10):
         out.update(_assess_chunk(items[i:i + 10]))
         if i + 10 < len(items):
@@ -438,8 +456,10 @@ def build_news(max_items: int = 40) -> list[dict]:
             ts = time.mktime(datetime.strptime(p, "%Y-%m-%d").timetuple())
         except Exception:
             pass
+        a = notes.get(title, {})
         out.append({
-            "cat": classify(title), "title": html.unescape(title), "text": notes.get(title, ""),
+            "cat": classify(title), "title": html.unescape(title), "text": a.get("note", ""),
+            "sent": a.get("sent", "flat"), "impact": a.get("impact", 2),
             "time": datetime.fromtimestamp(ts).strftime("%H:%M") if ts != now else "",
             "ts": int(ts), "urgent": any(k in title.lower() for k in URGENT_KEYWORDS),
             "url": it.get("url", ""), "source": it.get("source", ""), "image": it.get("image", ""),
