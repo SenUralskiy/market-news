@@ -29,8 +29,6 @@ jobs:
       - name: Build site
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          DEEPSEEK_BASE_URL: ${{ secrets.DEEPSEEK_BASE_URL }}
-          DEEPSEEK_FLASH_MODEL: ${{ secrets.DEEPSEEK_FLASH_MODEL }}
         run: python build.py
 
       - name: Commit and push

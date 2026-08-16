@@ -24,8 +24,8 @@ if _dev_env.exists():
     load_dotenv(_dev_env)
 
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
-DEEPSEEK_BASE_URL = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
-DEEPSEEK_FLASH = os.getenv("DEEPSEEK_FLASH_MODEL", "deepseek-v4-flash")
+DEEPSEEK_BASE_URL = os.getenv("DEEPSEEK_BASE_URL") or "https://api.deepseek.com"
+DEEPSEEK_FLASH = os.getenv("DEEPSEEK_FLASH_MODEL") or "deepseek-v4-flash"
 
 UA = {"User-Agent": "market-news/1.0"}
 
