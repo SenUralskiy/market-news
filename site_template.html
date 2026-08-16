@@ -234,16 +234,25 @@ canvas{display:block;width:100%}
   <div class="container nav-inner">
     <div class="nav-links">
       <a href="#lead">Главное</a>
-      <a href="#board">Котировки</a>
-      <a href="#feed">Лента</a>
       <a href="#analytics">Сводка ИИ</a>
+      <a href="#board">Котировки</a>
       <a href="#calendar">Дивиденды</a>
+      <a href="#feed">Лента</a>
     </div>
     <div class="nav-right"><i class="dot pulse"></i> ДАННЫЕ ОБНОВЛЕНЫ · <span id="navClock">--:--:--</span></div>
   </div>
 </nav>
 
 <main class="container">
+
+
+
+
+
+
+
+
+
 
 <section id="lead">
   <div class="sec-head">
@@ -269,10 +278,28 @@ canvas{display:block;width:100%}
     <div class="chart-wrap"><canvas id="bigChart" height="280"></canvas></div>
   </div>
 </section>
-
-<section id="board">
+<section id="analytics">
   <div class="sec-head">
     <span class="sec-idx">02</span>
+    <h2>Сводка ИИ</h2>
+    <span class="sec-line"></span>
+    <span class="sec-note">DeepSeek · по всем новостям</span>
+  </div>
+  <div class="ana-grid">
+    <article class="ana-big">
+      <div class="txt">
+        <span class="chip c-macro">Макро · Сводка дня</span>
+        <h3>Что важно сегодня</h3>
+        <p id="digestText">—</p>
+        <div class="byline">сгенерировано DeepSeek · <span id="digestTime">—</span></div>
+      </div>
+    </article>
+    <div class="ana-side" id="anaSide"></div>
+  </div>
+</section>
+<section id="board">
+  <div class="sec-head">
+    <span class="sec-idx">03</span>
     <h2>Котировки</h2>
     <span class="sec-line"></span>
     <span class="sec-note">МосБиржа · ЦБ</span>
@@ -293,10 +320,31 @@ canvas{display:block;width:100%}
   </div>
   <div style="margin-top:1rem"><button id="showMore" class="btn-ghost" style="display:none">Показать ещё</button></div>
 </section>
-
+<section id="calendar">
+  <div class="sec-head">
+    <span class="sec-idx">04</span>
+    <h2>Дивиденды</h2>
+    <span class="sec-line"></span>
+    <span class="sec-note">ближайшие отсечки</span>
+  </div>
+  <div class="cal-grid">
+    <div class="cal-list" id="calList"></div>
+    <div>
+      <div class="big-number">
+        <div class="v" id="volVal">—</div>
+        <div class="l">Объём торгов за сессию, млрд ₽</div>
+        <p>Суммарный оборот акций в основном режиме торгов МосБиржи.</p>
+      </div>
+      <div class="stat-pair">
+        <div class="mini-stat"><div class="v" id="keyRate">—</div><div class="l">Ключевая ставка</div></div>
+        <div class="mini-stat"><div class="v" id="imoexDay">—</div><div class="l">IMOEX за день</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="feed">
   <div class="sec-head">
-    <span class="sec-idx">03</span>
+    <span class="sec-idx">05</span>
     <h2>Лента новостей</h2>
     <span class="sec-line"></span>
     <span class="sec-note">с оценкой ИИ</span>
@@ -318,49 +366,6 @@ canvas{display:block;width:100%}
         <ol class="reading" id="urgentList"></ol>
       </div>
     </aside>
-  </div>
-</section>
-
-<section id="analytics">
-  <div class="sec-head">
-    <span class="sec-idx">04</span>
-    <h2>Сводка ИИ</h2>
-    <span class="sec-line"></span>
-    <span class="sec-note">DeepSeek · по всем новостям</span>
-  </div>
-  <div class="ana-grid">
-    <article class="ana-big">
-      <div class="txt">
-        <span class="chip c-macro">Макро · Сводка дня</span>
-        <h3>Что важно сегодня</h3>
-        <p id="digestText">—</p>
-        <div class="byline">сгенерировано DeepSeek · <span id="digestTime">—</span></div>
-      </div>
-    </article>
-    <div class="ana-side" id="anaSide"></div>
-  </div>
-</section>
-
-<section id="calendar">
-  <div class="sec-head">
-    <span class="sec-idx">05</span>
-    <h2>Дивиденды</h2>
-    <span class="sec-line"></span>
-    <span class="sec-note">ближайшие отсечки</span>
-  </div>
-  <div class="cal-grid">
-    <div class="cal-list" id="calList"></div>
-    <div>
-      <div class="big-number">
-        <div class="v" id="volVal">—</div>
-        <div class="l">Объём торгов за сессию, млрд ₽</div>
-        <p>Суммарный оборот акций в основном режиме торгов МосБиржи.</p>
-      </div>
-      <div class="stat-pair">
-        <div class="mini-stat"><div class="v" id="keyRate">—</div><div class="l">Ключевая ставка</div></div>
-        <div class="mini-stat"><div class="v" id="imoexDay">—</div><div class="l">IMOEX за день</div></div>
-      </div>
-    </div>
   </div>
 </section>
 </main>
