@@ -441,7 +441,8 @@ function idxCard(sym,label){
     const src=n.source?`<span class="n-src">${esc(n.source)}</span>`:'';
     const time=n.time?`<span class="n-time">${esc(n.time)}</span>`:'';
     const url=n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener" style="color:var(--accent);font-size:.78rem">→ источник</a>`:'';
-    const thumb=n.image?`<img class="n-img" src="${esc(n.image)}" alt="" loading="lazy" onerror="this.remove()">`:'';
+    const thumb=n.image?`<img class="n-img" src="${esc(n.image)}" alt="" loading="lazy" onerror="this.remove()">`
+      :(n.urgent?`<img class="n-img" src="assets/cat_${n.cat}.png" alt="" loading="lazy" onerror="this.remove()">`:'');
     return `<article class="news-item${n.urgent?' urgent':''}">
       <div>${time}${src}${n.urgent?'<span class="badge-new" style="margin-top:.5rem;display:inline-block">СРОЧНО</span>':''}</div>
       <div>${thumb}<div class="n-top"><span class="chip ${cl}">${label}</span></div>

@@ -301,7 +301,7 @@ def fetch_moex_news() -> list[dict]:
 
 
 def fetch_all_news() -> list[dict]:
-    items = fetch_moex_news() + fetch_rss()
+    items = fetch_rss() + fetch_moex_news()
     seen: set[str] = set()
     out = []
     for it in items:
