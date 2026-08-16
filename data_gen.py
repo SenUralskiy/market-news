@@ -71,6 +71,9 @@ RU_MONTHS = ["", "ЯНВ", "ФЕВ", "МАР", "АПР", "МАЙ", "ИЮН", "И
 RU_WD = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"]
 TOP_TICKERS = ["SBER", "GAZP", "LKOH", "ROSN", "GMKN", "YDEX", "T", "MGNT", "MTSS", "NVTK", "ALRS", "CHMF", "TATN", "VTBR", "SNGS", "AFLT", "OZON", "PLZL"]
 
+# реферальная ссылка Т-Банка (партнёрская программа) — заполни, когда получишь
+REFERRAL_URL = os.getenv("TBANK_REFERRAL_URL", "")
+
 
 def iss_json(path: str, params: dict | None = None) -> dict:
     r = requests.get(ISS + path, params=params, timeout=20, headers=UA)
@@ -292,7 +295,18 @@ def total_volume() -> float:
         return 0.0
 
 
-# ── дивиденды (MOEX) ──
+# ── данные с ПК через T-Bank (опционально, лежат в tbank_data.json) ──
+def load_tbank() -> dict:
+    p = SITE_DIR / "tbank_data.json"
+    if not p.exists():
+        return {}
+    try:
+        return json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+# ── дивиденды (T-Bank будущие → фолбэк на MOEX) ──
 def moex_dividend(ticker: str) -> dict | None:
     try:
         j = iss_json(f"/securities/{ticker}/dividends.json")
@@ -313,7 +327,28 @@ def moex_dividend(ticker: str) -> dict | None:
 
 
 def calendar() -> list[dict]:
+    tb = load_tbank()
+    divs = tb.get("dividends", [])
+    today = date.today().isoformat()
     out = []
+    for d in divs:
+        rec = str(d.get("record_date") or "")
+        if not rec or rec < today:
+            continue
+        try:
+            dt = datetime.strptime(rec, "%Y-%m-%d")
+            out.append({
+                "day": dt.strftime("%d"), "mon": RU_MONTHS[dt.month], "wd": RU_WD[dt.weekday()],
+                "title": f"Дивидендная отсечка «{d.get('ticker', '')}»",
+                "sub": f"{float(d.get('per_share', 0)):.2f} ₽ · доходность {float(d.get('yield_pct', 0) or 0):.1f}%",
+                "cat": "company",
+            })
+        except Exception:
+            continue
+    out.sort(key=lambda x: (RU_MONTHS.index(x["mon"]), x["day"]))
+    if out:
+        return out[:7]
+    # фолбэк на MOEX
     for t in TOP_TICKERS:
         d = moex_dividend(t)
         if d:
@@ -326,7 +361,7 @@ def calendar() -> list[dict]:
                 })
             except Exception:
                 continue
-    out.sort(key=lambda x: (x["mon"], x["day"]))
+    out.sort(key=lambda x: (RU_MONTHS.index(x["mon"]), x["day"]))
     return out[:7]
 
 
@@ -566,6 +601,7 @@ def main() -> None:
             item["chg"] = fx_chg[item["sym"]]
     news = build_news()
     digest = build_digest(news)
+    tb = load_tbank()
     data = {
         "generated_at": datetime.now().strftime("%d.%m.%Y %H:%M"),
         "key_rate": key_rate().get("rate"),
@@ -578,6 +614,8 @@ def main() -> None:
         "losers": losers,
         "volatile": volatile,
         "trends": trends(),
+        "bonds": tb.get("bonds", []),
+        "referral_url": REFERRAL_URL,
         "news": news,
         "digest": digest,
         "calendar": calendar(),

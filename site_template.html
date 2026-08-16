@@ -385,6 +385,18 @@ canvas{display:block;width:100%}
         <div class="panel-head"><span>Срочное сейчас</span></div>
         <ol class="reading" id="urgentList"></ol>
       </div>
+      <div class="panel">
+        <div class="panel-head"><span>Облигации · топ YTM</span></div>
+        <div id="bondsList"></div>
+      </div>
+      <div class="panel" id="referralPanel" style="display:none">
+        <div class="panel-head"><span>Открой счёт</span></div>
+        <div style="padding:1rem">
+          <p style="font-size:.85rem;color:var(--muted);margin-bottom:.8rem">Брокерский счёт в Т-Банке — акции, облигации, фонды, валюта.</p>
+          <a class="btn" href="#" id="referralLink" target="_blank" rel="noopener">Открыть счёт →</a>
+          <div style="margin-top:.6rem;font-size:.66rem;color:var(--dim)">Реклама · не является ИИР</div>
+        </div>
+      </div>
     </aside>
   </div>
 </section>
@@ -542,6 +554,8 @@ function idxCard(sym,label){
   const row=(m)=>`<div class="mover"><b>${esc(m.sym)}</b><span>${fmt(m.price,m.dec)}</span><em class="${cls(m.chg)}">${pct(m.chg)}</em></div>`;
   $('#moversUp').innerHTML=(D.movers_up||[]).map(row).join('');
   $('#moversDown').innerHTML=(D.movers_down||[]).map(row).join('');
+  $('#bondsList').innerHTML=(D.bonds||[]).slice(0,6).map(b=>`<div class="mover"><b title="${esc(b.name)}">${esc(b.ticker)}</b><span class="dim mono">${esc(b.maturity)}</span><em class="up">${b.ytm}%</em></div>`).join('')||'<div style="color:var(--dim);padding:.6rem 1rem;font-size:.78rem">нет данных</div>';
+  if(D.referral_url){$('#referralPanel').style.display='';$('#referralLink').href=D.referral_url;}
 })();
 
 /* сводка ИИ + сайдбар аналитики */
