@@ -46,6 +46,12 @@ RSS_SOURCES = [
     {"name": "Kommersant", "url": "https://www.kommersant.ru/RSS/news.xml"},
     {"name": "Vedomosti", "url": "https://www.vedomosti.ru/rss/news"},
     {"name": "Investing", "url": "https://ru.investing.com/rss/news.rss"},
+    {"name": "Forbes", "url": "https://www.forbes.ru/newrss.xml"},
+    {"name": "Lenta", "url": "https://lenta.ru/rss/news"},
+    {"name": "Izvestia", "url": "https://iz.ru/xml/rss/all.xml"},
+    {"name": "Prime", "url": "https://1prime.ru/export/rss2/index.xml"},
+    {"name": "Finam", "url": "https://www.finam.ru/rss/news.rss"},
+    {"name": "SmartLab", "url": "https://smart-lab.ru/rss/all.xml"},
 ]
 
 URGENT_KEYWORDS = [
@@ -160,6 +166,65 @@ def metals() -> list[dict]:
         if price is not None:
             out.append({"sym": sym, "name": name, "price": price, "chg": chg, "dec": dec})
     return out
+
+
+# ── изменение за день у основных валют (валютный рынок MOEX) ──
+def moex_fx_change() -> dict[str, float]:
+    try:
+        j = iss_json("/engines/currency/markets/selt/securities.json")
+        ci = j["marketdata"]["columns"]
+        secid_i = ci.index("SECID")
+        md = {m[secid_i]: m for m in j["marketdata"]["data"]}
+        mapping = {"USD000UTSTOM": "USD", "EUR_RUB__TOM": "EUR", "CNY000000TOD": "CNY", "HKDRUB_TOM": "HKD"}
+        out = {}
+        for secid, code in mapping.items():
+            m = md.get(secid)
+            if m and "LASTCHANGEPRCNT" in ci:
+                v = m[ci.index("LASTCHANGEPRCNT")]
+                if v is not None:
+                    out[code] = v
+        return out
+    except Exception:
+        return {}
+
+
+def selt_candles(secid: str, days: int = 90) -> list[float]:
+    try:
+        from_date = (pd.Timestamp.today() - pd.Timedelta(days=days)).strftime("%Y-%m-%d")
+        r = iss_json(f"/engines/currency/markets/selt/securities/{secid}/candles.json",
+                     {"interval": 24, "from": from_date})
+        rows = r["candles"]["data"]
+        if not rows:
+            return []
+        ci = r["candles"]["columns"].index("close")
+        return [round(float(row[ci]), 2) for row in rows[-30:]]
+    except Exception:
+        return []
+
+
+def forts_candles(assetcode: str) -> list[float]:
+    try:
+        j = iss_json("/engines/futures/markets/forts/securities.json")
+        df = pd.DataFrame(j["securities"]["data"], columns=j["securities"]["columns"])
+        today = pd.Timestamp.today()
+        sub = df[df["ASSETCODE"] == assetcode].copy()
+        sub["LASTTRADEDATE"] = pd.to_datetime(sub["LASTTRADEDATE"], errors="coerce")
+        sub = sub[sub["LASTTRADEDATE"] >= today].sort_values("LASTTRADEDATE")
+        if sub.empty:
+            return []
+        secid = sub.iloc[0]["SECID"]
+        c = iss_json(f"/engines/futures/markets/forts/securities/{secid}/candles.json", {"interval": 24})
+        rows = c["candles"]["data"]
+        if not rows:
+            return []
+        ci = c["candles"]["columns"].index("close")
+        return [round(float(row[ci]), 2) for row in rows[-30:]]
+    except Exception:
+        return []
+
+
+def trends() -> dict[str, list[float]]:
+    return {"gold": selt_candles("GLDRUB_TOM"), "usd": selt_candles("USD000UTSTOM"), "brent": forts_candles("BR")}
 
 
 # ── товары (нефть, газ) ──
@@ -494,19 +559,25 @@ def main() -> None:
     gainers = sorted([s for s in stocks if s["chg"] is not None and s["chg"] > 0], key=lambda x: -x["chg"])[:10]
     losers = sorted([s for s in stocks if s["chg"] is not None and s["chg"] < 0], key=lambda x: x["chg"])[:10]
     volatile = sorted([s for s in stocks if s["volatility"] is not None], key=lambda x: -x["volatility"])[:10]
+    fx = all_fx()
+    fx_chg = moex_fx_change()
+    for item in fx:
+        if item["sym"] in fx_chg:
+            item["chg"] = fx_chg[item["sym"]]
     news = build_news()
     digest = build_digest(news)
     data = {
         "generated_at": datetime.now().strftime("%d.%m.%Y %H:%M"),
         "key_rate": key_rate().get("rate"),
         "indices": indexes(),
-        "fx": all_fx(),
+        "fx": fx,
         "metals": metals(),
         "commodities": commodities(),
         "stocks": stocks,
         "gainers": gainers,
         "losers": losers,
         "volatile": volatile,
+        "trends": trends(),
         "news": news,
         "digest": digest,
         "calendar": calendar(),

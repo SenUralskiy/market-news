@@ -48,14 +48,19 @@ def generate(prompt: str, path: Path) -> None:
     else:
         print(f"[agnes] нет данных для {path.name}")
         return
+    import io
+
+    from PIL import Image
+
+    image = Image.open(io.BytesIO(img)).convert("RGB")
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_bytes(img)
-    print(f"[agnes] сохранено {path} ({len(img) // 1024} КБ)")
+    image.save(path, "WEBP", quality=80, method=6)
+    print(f"[agnes] сохранено {path} ({path.stat().st_size // 1024} КБ)")
 
 
 def main() -> None:
     for name, prompt in PROMPTS.items():
-        generate(prompt, ASSETS / f"{name}.png")
+        generate(prompt, ASSETS / f"{name}.webp")
 
 
 if __name__ == "__main__":
