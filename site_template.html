@@ -419,7 +419,7 @@ const ASSETS=allAssets();
 
 /* карточки индексов (главное) */
 function idxCard(sym,label){
-  const a=ASSETS.find(x=>x.sym===sym)||ASSETS.find(x=>x.type==='index');
+  const a=ASSETS.find(x=>x.sym===sym);
   if(!a)return '';
   return `<div class="idx-card"><div class="idx-top"><span>${label}</span><span>${sym}</span></div>
     <div class="idx-val">${fmt(a.price,a.dec)}</div><span class="idx-chg ${cls(a.chg)}">${pct(a.chg)}</span></div>`;
@@ -428,7 +428,7 @@ function idxCard(sym,label){
   $('#indexStack').innerHTML=
     idxCard('IMOEX','Индекс МосБиржи')+
     idxCard('RTS','Индекс РТС')+
-    idxCard('USD/RUB','Доллар / Рубль')+
+    idxCard('USD','Доллар / Рубль')+
     idxCard('BRENT','Нефть Brent, $');
 })();
 
