@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Рынок сегодня — биржевой дайджест</title>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Биржевой дайджест: котировки МосБиржи, новости рынка с оценкой ИИ, индексы, валюты, металлы и дивиденды. Обновляется каждые 5 минут.">
 <meta property="og:title" content="Рынок сегодня — биржевой дайджест">
 <meta property="og:description" content="Котировки, индексы и новости рынка с оценкой ИИ. Обновляется автоматически.">
@@ -33,7 +33,7 @@ img{display:block;max-width:100%}
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.045;
  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .tape{border-bottom:1px solid var(--line);background:#070a0e;overflow:hidden;white-space:nowrap}
-.tape-track{display:inline-flex;gap:2.6rem;padding:.55rem 0;width:max-content;animation:tape 90s linear infinite}
+.tape-track{display:inline-flex;gap:2.6rem;padding:.55rem 0;width:max-content;animation:tape 180s linear infinite}
 .tape:hover .tape-track{animation-play-state:paused}
 @keyframes tape{to{transform:translateX(-50%)}}
 .tape-item{font-family:var(--fm);font-size:.78rem;display:inline-flex;gap:.55rem;align-items:baseline}
@@ -288,6 +288,7 @@ canvas{display:block;width:100%}
       <tbody id="boardBody"></tbody>
     </table>
   </div>
+  <div style="margin-top:1rem"><button id="showMore" class="btn-ghost" style="display:none">Показать ещё</button></div>
 </section>
 
 <section id="feed">
@@ -399,7 +400,8 @@ const ASSETS=allAssets();
 
 /* тайп (бегущая строка) */
 (function(){
-  const half=ASSETS.map(a=>`<span class="tape-item"><b>${a.sym}</b><span class="p">${fmt(a.price,a.dec)}</span><span class="c ${cls(a.chg)}">${pct(a.chg)}</span></span>`).join('');
+  const tapeAssets = D.indices.concat(D.fx||[], D.metals||[], D.commodities||[], (D.stocks||[]).slice(0,15));
+  const half=tapeAssets.map(a=>`<span class="tape-item"><b>${esc(a.sym)}</b><span class="p">${fmt(a.price,a.dec)}</span><span class="c ${cls(a.chg)}">${pct(a.chg)}</span></span>`).join('');
   $('#tapeTrack').innerHTML=half+half;
 })();
 
@@ -444,18 +446,38 @@ function idxCard(sym,label){
 
 /* таблица котировок */
 (function(){
-  $('#boardBody').innerHTML=ASSETS.map(a=>`
+  const body=$('#boardBody');
+  body.innerHTML=ASSETS.map(a=>`
    <tr data-type="${a.type}">
     <td class="c-name"><b>${esc(a.sym)}</b><span>${esc(a.name)}</span></td>
     <td>${fmt(a.price,a.dec)}</td>
     <td class="${cls(a.chg)}">${pct(a.chg)}</td>
     <td class="c-vol" style="color:var(--muted);font-size:.78rem">${esc(a.vol||'—')}</td>
    </tr>`).join('');
+  const rows=[...body.querySelectorAll('tr')];
+  let visible=20;
+
+  function refresh(){
+    const f=document.querySelector('.tab.active').dataset.filter;
+    let matched=0;
+    rows.forEach(r=>{
+      const m=f==='all'||r.dataset.type===f;
+      if(m)matched++;
+      r.classList.toggle('hide',!(m&&matched<=visible));
+    });
+    const hidden=rows.filter(r=>{
+      const f2=document.querySelector('.tab.active').dataset.filter;
+      return (f2==='all'||r.dataset.type===f2)&&r.classList.contains('hide');
+    }).length;
+    $('#showMore').style.display=hidden?'':'none';
+    $('#showMore').textContent='Показать ещё ('+hidden+')';
+  }
   document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
     document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));t.classList.add('active');
-    const f=t.dataset.filter;
-    document.querySelectorAll('#boardBody tr').forEach(r=>r.classList.toggle('hide',f!=='all'&&r.dataset.type!==f));
+    visible=20;refresh();
   }));
+  $('#showMore').addEventListener('click',()=>{visible+=60;refresh();});
+  refresh();
 })();
 
 /* лента новостей */
