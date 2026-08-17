@@ -117,9 +117,12 @@ def index_candles(secid: str) -> list[float]:
 def indexes() -> list[dict]:
     out: dict[str, dict] = {}
     for board in ("SNDX", "RTSI"):
-        j = iss_json(f"/engines/stock/markets/index/boards/{board}/securities.json")
-        md = {m[0]: m for m in j["marketdata"]["data"]}
-        ci = j["marketdata"]["columns"]
+        try:
+            j = iss_json(f"/engines/stock/markets/index/boards/{board}/securities.json")
+            md = {m[0]: m for m in j["marketdata"]["data"]}
+            ci = j["marketdata"]["columns"]
+        except Exception:
+            continue
         for secid, name in INDEX_MAP.items():
             if secid in md and secid not in out:
                 m = md[secid]
@@ -160,10 +163,13 @@ def all_fx() -> list[dict]:
 
 
 def metals() -> list[dict]:
-    j = iss_json("/engines/currency/markets/selt/securities.json")
-    ci = j["marketdata"]["columns"]
-    secid_i = ci.index("SECID")
-    md = {m[secid_i]: m for m in j["marketdata"]["data"]}
+    try:
+        j = iss_json("/engines/currency/markets/selt/securities.json")
+        ci = j["marketdata"]["columns"]
+        secid_i = ci.index("SECID")
+        md = {m[secid_i]: m for m in j["marketdata"]["data"]}
+    except Exception:
+        return []
     out = []
     for secid, (sym, name, dec) in METALS_MAP.items():
         m = md.get(secid)
@@ -261,9 +267,12 @@ def commodities() -> list[dict]:
 
 # ── акции (все ликвидные + волатильность) ──
 def all_stocks() -> list[dict]:
-    j = iss_json("/engines/stock/markets/shares/boards/TQBR/securities.json")
-    sec = pd.DataFrame(j["securities"]["data"], columns=j["securities"]["columns"])
-    md = pd.DataFrame(j["marketdata"]["data"], columns=j["marketdata"]["columns"])
+    try:
+        j = iss_json("/engines/stock/markets/shares/boards/TQBR/securities.json")
+        sec = pd.DataFrame(j["securities"]["data"], columns=j["securities"]["columns"])
+        md = pd.DataFrame(j["marketdata"]["data"], columns=j["marketdata"]["columns"])
+    except Exception:
+        return []
     sec = sec[["SECID", "SHORTNAME", "PREVPRICE"]]
     md = md[["SECID", "LAST", "LASTCHANGEPRCNT", "LASTTOPREVPRICE", "VALTODAY", "HIGH", "LOW"]]
     base = sec.merge(md, on="SECID", how="inner")
