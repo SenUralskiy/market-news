@@ -497,30 +497,21 @@ def h(title: str) -> str:
     return hashlib.sha1(norm(title).encode("utf-8")).hexdigest()
 
 
-def seen_hashes() -> set[str]:
+def load_state() -> dict[str, dict]:
     if not STATE_PATH.exists():
-        return set()
+        return {}
     try:
         data = json.loads(STATE_PATH.read_text(encoding="utf-8"))
-        return {r["h"] for r in data.get("seen", [])}
+        return {r["h"]: r for r in data.get("seen", [])}
     except Exception:
-        return set()
+        return {}
 
 
-def mark_published(items: list[dict]) -> None:
-    data: dict = {"seen": []}
-    if STATE_PATH.exists():
-        try:
-            data = json.loads(STATE_PATH.read_text(encoding="utf-8"))
-        except Exception:
-            data = {"seen": []}
+def save_state(state: dict[str, dict]) -> None:
     now = time.time()
-    existing = {r["h"]: r["ts"] for r in data.get("seen", [])}
-    for it in items:
-        existing[h(it["title"])] = now
-    existing = {k: v for k, v in existing.items() if now - v < 86400 * 7}
-    data["seen"] = [{"h": k, "ts": v} for k, v in existing.items()]
-    STATE_PATH.write_text(json.dumps(data), encoding="utf-8")
+    state = {k: v for k, v in state.items() if now - v.get("ts", 0) < 86400 * 7}
+    data = {"seen": [{"h": k, **v} for k, v in state.items()]}
+    STATE_PATH.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
 
 
 def _assess_chunk(items: list[dict]) -> dict[str, dict]:
@@ -597,12 +588,21 @@ def assess(items: list[dict]) -> dict[str, dict]:
 
 def build_news(max_items: int = 40) -> list[dict]:
     items = fetch_all_news()
-    seen = seen_hashes()
-    fresh = [it for it in items if h(it["title"]) not in seen][:max_items]
-    if not fresh:
-        fresh = items[:max_items]
-    top = fresh[:30]
-    notes = assess(top)
+    state = load_state()
+
+    # отделяем новинки (без кэша оценки) от уже оценённых
+    to_assess: list[dict] = []
+    notes: dict[str, dict] = {}
+    for it in items[:max_items]:
+        a = state.get(h(it["title"]), {}).get("a")
+        if a and a.get("note"):
+            notes[it["title"]] = a
+        else:
+            to_assess.append(it)
+
+    notes.update(assess(to_assess[:20]))  # максимум 20 новых за прогон — ИИ зовём только сюда
+
+    top = items[:30]
     out = []
     now = time.time()
     for it in top:
@@ -621,7 +621,8 @@ def build_news(max_items: int = 40) -> list[dict]:
             "ts": int(ts), "urgent": any(k in title.lower() for k in URGENT_KEYWORDS),
             "url": it.get("url", ""), "source": it.get("source", ""), "image": it.get("image", ""),
         })
-    mark_published(top)
+        state[h(title)] = {"ts": now, "a": a if a.get("note") else {"note": "", "sent": "flat", "impact": 2}}
+    save_state(state)
     return out
 
 
