@@ -23,9 +23,9 @@ _dev_env = Path(r"D:\traiding\.env")
 if _dev_env.exists():
     load_dotenv(_dev_env)
 
-DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
-DEEPSEEK_BASE_URL = os.getenv("DEEPSEEK_BASE_URL") or "https://api.deepseek.com"
-DEEPSEEK_FLASH = os.getenv("DEEPSEEK_FLASH_MODEL") or "deepseek-v4-flash"
+AI_API_KEY = os.getenv("AGNES_API_KEY", "")
+AI_BASE_URL = os.getenv("AGNES_BASE_URL") or "https://apihub.agnes-ai.com/v1"
+AI_MODEL = os.getenv("AGNES_TEXT_MODEL") or "agnes-2.0-flash"
 
 UA = {"User-Agent": "market-news/1.0"}
 
@@ -515,7 +515,7 @@ def save_state(state: dict[str, dict]) -> None:
 
 
 def _assess_chunk(items: list[dict]) -> dict[str, dict]:
-    if not DEEPSEEK_API_KEY:
+    if not AI_API_KEY:
         return {}
     from openai import OpenAI
 
@@ -528,10 +528,10 @@ def _assess_chunk(items: list[dict]) -> dict[str, dict]:
         'i — влияние на рынок: 1 (низкое), 2 (среднее), 3 (высокое). '
         'Без лишнего текста. Без выдуманных цифр.'
     )
-    client = OpenAI(base_url=DEEPSEEK_BASE_URL, api_key=DEEPSEEK_API_KEY, timeout=90.0)
+    client = OpenAI(base_url=AI_BASE_URL, api_key=AI_API_KEY, timeout=90.0)
     try:
         r = client.chat.completions.create(
-            model=DEEPSEEK_FLASH,
+            model=AI_MODEL,
             messages=[{"role": "system", "content": system}, {"role": "user", "content": numbered}],
             temperature=0.3, max_tokens=2000,
         )
@@ -627,15 +627,15 @@ def build_news(max_items: int = 40) -> list[dict]:
 
 
 def build_digest(news: list[dict]) -> str:
-    if not DEEPSEEK_API_KEY or not news:
+    if not AI_API_KEY or not news:
         return ""
     from openai import OpenAI
 
     titles = "\n".join(f"- {n['title']}" for n in news[:25])
-    client = OpenAI(base_url=DEEPSEEK_BASE_URL, api_key=DEEPSEEK_API_KEY, timeout=90.0)
+    client = OpenAI(base_url=AI_BASE_URL, api_key=AI_API_KEY, timeout=90.0)
     try:
         r = client.chat.completions.create(
-            model=DEEPSEEK_FLASH,
+            model=AI_MODEL,
             messages=[
                 {"role": "system", "content": "Ты — аналитик российского рынка. Дай сводку дня: 3-5 тезисов о том, что важно сегодня и как это влияет на рынок. По-русски, без воды, до 150 слов."},
                 {"role": "user", "content": titles},
