@@ -633,11 +633,12 @@ def build_digest(news: list[dict]) -> str:
 
     titles = "\n".join(f"- {n['title']}" for n in news[:25])
     client = OpenAI(base_url=AI_BASE_URL, api_key=AI_API_KEY, timeout=90.0)
+    today = datetime.now().strftime("%d %B %Y")
     try:
         r = client.chat.completions.create(
             model=AI_MODEL,
             messages=[
-                {"role": "system", "content": "Ты — аналитик российского рынка. Дай сводку дня: 3-5 тезисов о том, что важно сегодня и как это влияет на рынок. По-русски, без воды, до 150 слов."},
+                {"role": "system", "content": f"Ты — аналитик российского рынка. Сегодня {today}. Дай сводку дня: 3-5 тезисов о том, что важно сегодня и как это влияет на рынок. Не пиши заголовки и даты, только сами тезисы по пунктам. По-русски, до 150 слов."},
                 {"role": "user", "content": titles},
             ],
             temperature=0.4, max_tokens=800,
