@@ -1,11 +1,11 @@
 {
-  "generated_at": "26.09.2026 09:03",
+  "generated_at": "26.09.2026 09:36",
   "key_rate": 14.0,
   "indices": [
     {
       "sym": "IMOEX",
       "name": "Индекс МосБиржи",
-      "price": 2276.44,
+      "price": 2276.38,
       "chg": 0.11,
       "dec": 2,
       "spark": [
@@ -38,13 +38,13 @@
         2312.27,
         2312.35,
         2273.87,
-        2276.44
+        2276.38
       ]
     },
     {
       "sym": "RTS",
       "name": "Индекс РТС",
-      "price": 850.27,
+      "price": 850.26,
       "chg": 0.11,
       "dec": 2,
       "spark": [
@@ -77,7 +77,7 @@
         863.08,
         857.94,
         849.31,
-        850.27
+        850.24
       ]
     },
     {
@@ -505,7 +505,7 @@
     {
       "sym": "BRENT",
       "name": "Нефть Brent, $",
-      "price": 105.48,
+      "price": 105.3,
       "chg": null,
       "dec": 2
     },
@@ -521,20 +521,29 @@
     {
       "sym": "OZON",
       "name": "Озон",
-      "price": 2955.5,
-      "chg": 1.06,
+      "price": 2952.0,
+      "chg": 0.94,
       "dec": 0,
-      "vol": "0.33 млрд ₽",
+      "vol": "0.36 млрд ₽",
       "volatility": 1.42
     },
     {
       "sym": "GAZP",
       "name": "ГАЗПРОМ ао",
-      "price": 99.1,
-      "chg": 0.32,
+      "price": 98.96,
+      "chg": 0.18,
       "dec": 2,
-      "vol": "0.17 млрд ₽",
+      "vol": "0.18 млрд ₽",
       "volatility": 0.48
+    },
+    {
+      "sym": "T",
+      "name": "Т-Техно ао",
+      "price": 251.22,
+      "chg": 0.26,
+      "dec": 2,
+      "vol": "0.18 млрд ₽",
+      "volatility": 0.42
     },
     {
       "sym": "SBFR",
@@ -542,7 +551,7 @@
       "price": 15.59,
       "chg": 0.03,
       "dec": 2,
-      "vol": "0.15 млрд ₽",
+      "vol": "0.17 млрд ₽",
       "volatility": 0.13
     },
     {
@@ -551,16 +560,16 @@
       "price": 19.4955,
       "chg": 0.04,
       "dec": 2,
-      "vol": "0.13 млрд ₽",
+      "vol": "0.15 млрд ₽",
       "volatility": 0.01
     },
     {
       "sym": "YDEX",
       "name": "ЯНДЕКС",
-      "price": 3595.0,
-      "chg": 0.26,
+      "price": 3593.0,
+      "chg": 0.21,
       "dec": 0,
-      "vol": "0.13 млрд ₽",
+      "vol": "0.14 млрд ₽",
       "volatility": 0.43
     },
     {
@@ -569,7 +578,7 @@
       "price": 178.41,
       "chg": 0.03,
       "dec": 2,
-      "vol": "0.11 млрд ₽",
+      "vol": "0.14 млрд ₽",
       "volatility": 0.01
     },
     {
@@ -578,14 +587,14 @@
       "price": 2.0961,
       "chg": 0.04,
       "dec": 2,
-      "vol": "0.10 млрд ₽",
+      "vol": "0.12 млрд ₽",
       "volatility": 0.0
     },
     {
       "sym": "ROSN",
       "name": "Роснефть",
-      "price": 360.95,
-      "chg": 0.39,
+      "price": 360.6,
+      "chg": 0.29,
       "dec": 2,
       "vol": "0.09 млрд ₽",
       "volatility": 0.49
@@ -593,8 +602,8 @@
     {
       "sym": "PLZL",
       "name": "Полюс",
-      "price": 1005.8,
-      "chg": 0.04,
+      "price": 1006.8,
+      "chg": 0.14,
       "dec": 0,
       "vol": "0.07 млрд ₽",
       "volatility": 1.15
@@ -602,8 +611,8 @@
     {
       "sym": "SBER",
       "name": "Сбербанк",
-      "price": 276.33,
-      "chg": -0.01,
+      "price": 276.36,
+      "chg": 0.0,
       "dec": 2,
       "vol": "0.07 млрд ₽",
       "volatility": 0.2
@@ -611,35 +620,26 @@
     {
       "sym": "NVTK",
       "name": "Новатэк ао",
-      "price": 1056.5,
-      "chg": 0.43,
+      "price": 1054.3,
+      "chg": 0.22,
       "dec": 0,
-      "vol": "0.06 млрд ₽",
+      "vol": "0.07 млрд ₽",
       "volatility": 0.57
-    },
-    {
-      "sym": "T",
-      "name": "Т-Техно ао",
-      "price": 250.98,
-      "chg": 0.16,
-      "dec": 2,
-      "vol": "0.06 млрд ₽",
-      "volatility": 0.22
     },
     {
       "sym": "LKOH",
       "name": "ЛУКОЙЛ",
-      "price": 5367.5,
-      "chg": -0.12,
+      "price": 5367.0,
+      "chg": -0.13,
       "dec": 0,
-      "vol": "0.05 млрд ₽",
+      "vol": "0.06 млрд ₽",
       "volatility": 0.47
     },
     {
       "sym": "GMKN",
       "name": "ГМКНорНик",
-      "price": 118.5,
-      "chg": 0.15,
+      "price": 118.48,
+      "chg": 0.14,
       "dec": 2,
       "vol": "0.05 млрд ₽",
       "volatility": 0.42
@@ -656,8 +656,8 @@
     {
       "sym": "VTBR",
       "name": "ВТБ ао",
-      "price": 51.32,
-      "chg": 0.22,
+      "price": 51.3,
+      "chg": 0.19,
       "dec": 2,
       "vol": "0.04 млрд ₽",
       "volatility": 0.34
@@ -665,8 +665,8 @@
     {
       "sym": "SBRB",
       "name": "SBRB ETF",
-      "price": 19.037,
-      "chg": 0.04,
+      "price": 19.039,
+      "chg": 0.05,
       "dec": 2,
       "vol": "0.03 млрд ₽",
       "volatility": 0.13
@@ -683,11 +683,20 @@
     {
       "sym": "TPAY",
       "name": "TPAY ETF",
-      "price": 102.1,
-      "chg": 0.04,
+      "price": 102.08,
+      "chg": 0.02,
       "dec": 2,
       "vol": "0.03 млрд ₽",
       "volatility": 0.14
+    },
+    {
+      "sym": "BSPB",
+      "name": "БСП ао",
+      "price": 263.67,
+      "chg": 0.83,
+      "dec": 2,
+      "vol": "0.02 млрд ₽",
+      "volatility": 0.94
     },
     {
       "sym": "SPBE",
@@ -696,43 +705,34 @@
       "chg": -0.63,
       "dec": 2,
       "vol": "0.02 млрд ₽",
-      "volatility": 1.2
-    },
-    {
-      "sym": "BSPB",
-      "name": "БСП ао",
-      "price": 263.09,
-      "chg": 0.61,
-      "dec": 2,
-      "vol": "0.02 млрд ₽",
-      "volatility": 0.94
+      "volatility": 1.41
     },
     {
       "sym": "MGNT",
       "name": "Магнит ао",
-      "price": 1640.0,
-      "chg": 0.61,
+      "price": 1642.5,
+      "chg": 0.77,
       "dec": 0,
       "vol": "0.02 млрд ₽",
-      "volatility": 0.86
-    },
-    {
-      "sym": "TATNP",
-      "name": "Татнфт 3ап",
-      "price": 602.6,
-      "chg": 0.5,
-      "dec": 2,
-      "vol": "0.02 млрд ₽",
-      "volatility": 0.83
+      "volatility": 0.92
     },
     {
       "sym": "X5",
       "name": "КЦ ИКС 5",
-      "price": 1812.0,
-      "chg": 0.14,
+      "price": 1814.0,
+      "chg": 0.25,
       "dec": 0,
       "vol": "0.02 млрд ₽",
-      "volatility": 0.3
+      "volatility": 0.33
+    },
+    {
+      "sym": "TATNP",
+      "name": "Татнфт 3ап",
+      "price": 602.5,
+      "chg": 0.48,
+      "dec": 2,
+      "vol": "0.02 млрд ₽",
+      "volatility": 0.83
     },
     {
       "sym": "ALRS",
@@ -744,64 +744,91 @@
       "volatility": 0.72
     },
     {
-      "sym": "MTSS",
-      "name": "МТС-ао",
-      "price": 175.65,
-      "chg": 0.23,
-      "dec": 2,
-      "vol": "0.01 млрд ₽",
-      "volatility": 0.8
-    },
-    {
       "sym": "SMLT",
       "name": "Самолет ао",
-      "price": 250.4,
-      "chg": -0.48,
+      "price": 250.6,
+      "chg": -0.4,
       "dec": 2,
-      "vol": "0.01 млрд ₽",
+      "vol": "0.02 млрд ₽",
       "volatility": 0.56
     },
     {
       "sym": "SNGS",
       "name": "Сургнфгз",
-      "price": 15.38,
-      "chg": 0.16,
+      "price": 15.365,
+      "chg": 0.07,
       "dec": 2,
       "vol": "0.01 млрд ₽",
       "volatility": 0.46
     },
     {
-      "sym": "AKFB",
-      "name": "AKFB ETF",
-      "price": 141.34,
-      "chg": -0.02,
+      "sym": "MTSS",
+      "name": "МТС-ао",
+      "price": 175.7,
+      "chg": 0.26,
       "dec": 2,
       "vol": "0.01 млрд ₽",
-      "volatility": 0.06
+      "volatility": 0.8
+    },
+    {
+      "sym": "SNGSP",
+      "name": "Сургнфгз-п",
+      "price": 39.91,
+      "chg": -0.03,
+      "dec": 2,
+      "vol": "0.01 млрд ₽",
+      "volatility": 0.51
     },
     {
       "sym": "TRNFP",
       "name": "Транснф ап",
-      "price": 1020.0,
-      "chg": 0.1,
+      "price": 1021.2,
+      "chg": 0.22,
       "dec": 0,
       "vol": "0.01 млрд ₽",
       "volatility": 0.35
     },
     {
+      "sym": "AKFB",
+      "name": "AKFB ETF",
+      "price": 141.35,
+      "chg": -0.01,
+      "dec": 2,
+      "vol": "0.01 млрд ₽",
+      "volatility": 0.06
+    },
+    {
+      "sym": "MAGN",
+      "name": "ММК",
+      "price": 21.32,
+      "chg": 0.33,
+      "dec": 2,
+      "vol": "0.01 млрд ₽",
+      "volatility": 0.54
+    },
+    {
       "sym": "BCSD",
       "name": "BCSD ETF",
-      "price": 14.436,
-      "chg": 0.01,
+      "price": 14.44,
+      "chg": 0.03,
       "dec": 2,
       "vol": "0.01 млрд ₽",
       "volatility": 0.03
     },
     {
+      "sym": "SVCB",
+      "name": "Совкомбанк",
+      "price": 9.56,
+      "chg": 0.0,
+      "dec": 2,
+      "vol": "0.01 млрд ₽",
+      "volatility": 0.68
+    },
+    {
       "sym": "TATN",
       "name": "Татнфт 3ао",
-      "price": 628.5,
-      "chg": 0.19,
+      "price": 628.3,
+      "chg": 0.16,
       "dec": 2,
       "vol": "0.01 млрд ₽",
       "volatility": 0.33
@@ -809,8 +836,8 @@
     {
       "sym": "VKCO",
       "name": "МКПАО \"ВК\"",
-      "price": 112.9,
-      "chg": 0.0,
+      "price": 113.0,
+      "chg": 0.09,
       "dec": 2,
       "vol": "0.01 млрд ₽",
       "volatility": 0.62
@@ -818,53 +845,26 @@
     {
       "sym": "FEES",
       "name": "Россети",
-      "price": 0.04826,
-      "chg": 0.84,
+      "price": 0.04824,
+      "chg": 0.79,
       "dec": 2,
       "vol": "0.01 млрд ₽",
       "volatility": 1.38
     },
     {
-      "sym": "SNGSP",
-      "name": "Сургнфгз-п",
-      "price": 39.97,
-      "chg": 0.13,
-      "dec": 2,
-      "vol": "0.01 млрд ₽",
-      "volatility": 0.51
-    },
-    {
-      "sym": "MAGN",
-      "name": "ММК",
-      "price": 21.305,
-      "chg": 0.26,
-      "dec": 2,
-      "vol": "0.01 млрд ₽",
-      "volatility": 0.54
-    },
-    {
       "sym": "PHOR",
       "name": "ФосАгро ао",
-      "price": 5084.0,
-      "chg": 0.59,
+      "price": 5076.0,
+      "chg": 0.44,
       "dec": 0,
       "vol": "0.01 млрд ₽",
       "volatility": 0.4
     },
     {
-      "sym": "SVCB",
-      "name": "Совкомбанк",
-      "price": 9.54,
-      "chg": -0.21,
-      "dec": 2,
-      "vol": "0.01 млрд ₽",
-      "volatility": 0.68
-    },
-    {
       "sym": "SBERP",
       "name": "Сбербанк-п",
-      "price": 276.9,
-      "chg": 0.05,
+      "price": 276.95,
+      "chg": 0.07,
       "dec": 2,
       "vol": "0.01 млрд ₽",
       "volatility": 0.23
@@ -872,8 +872,8 @@
     {
       "sym": "RUAL",
       "name": "РУСАЛ ао",
-      "price": 23.37,
-      "chg": 0.0,
+      "price": 23.355,
+      "chg": -0.06,
       "dec": 2,
       "vol": "0.01 млрд ₽",
       "volatility": 0.26
@@ -881,8 +881,8 @@
     {
       "sym": "NLMK",
       "name": "НЛМК ао",
-      "price": 69.04,
-      "chg": -0.14,
+      "price": 68.98,
+      "chg": -0.23,
       "dec": 2,
       "vol": "0.01 млрд ₽",
       "volatility": 0.35
@@ -890,8 +890,8 @@
     {
       "sym": "SIBN",
       "name": "Газпрнефть",
-      "price": 553.2,
-      "chg": 0.34,
+      "price": 553.65,
+      "chg": 0.43,
       "dec": 2,
       "vol": "0.01 млрд ₽",
       "volatility": 0.46
@@ -899,8 +899,8 @@
     {
       "sym": "CHMF",
       "name": "СевСт-ао",
-      "price": 641.4,
-      "chg": -0.06,
+      "price": 641.8,
+      "chg": 0.0,
       "dec": 2,
       "vol": "0.01 млрд ₽",
       "volatility": 0.56
@@ -908,38 +908,29 @@
     {
       "sym": "DOMRF",
       "name": "ДОМ.РФ",
-      "price": 2064.0,
-      "chg": -0.08,
+      "price": 2066.0,
+      "chg": 0.02,
       "dec": 0,
       "vol": "0.01 млрд ₽",
       "volatility": 0.33
     },
     {
-      "sym": "AKMB",
-      "name": "ETF AKMB",
-      "price": 1.98,
-      "chg": 0.13,
-      "dec": 2,
-      "vol": "0.01 млрд ₽",
-      "volatility": 0.17
-    },
-    {
       "sym": "MOEX",
       "name": "МосБиржа",
-      "price": 148.5,
+      "price": 148.51,
       "chg": -0.09,
       "dec": 2,
       "vol": "0.01 млрд ₽",
       "volatility": 0.32
     },
     {
-      "sym": "RAGR",
-      "name": "Русагро",
-      "price": 69.04,
-      "chg": -0.03,
+      "sym": "AKMB",
+      "name": "ETF AKMB",
+      "price": 1.9802,
+      "chg": 0.14,
       "dec": 2,
       "vol": "0.01 млрд ₽",
-      "volatility": 0.58
+      "volatility": 0.17
     },
     {
       "sym": "MTLR",
@@ -951,6 +942,15 @@
       "volatility": 1.11
     },
     {
+      "sym": "RAGR",
+      "name": "Русагро",
+      "price": 69.06,
+      "chg": 0.0,
+      "dec": 2,
+      "vol": "0.01 млрд ₽",
+      "volatility": 0.58
+    },
+    {
       "sym": "AMFL",
       "name": "AMFL ETF",
       "price": 141.6,
@@ -960,31 +960,49 @@
       "volatility": 0.14
     },
     {
+      "sym": "AFKS",
+      "name": "Система ао",
+      "price": 7.138,
+      "chg": -0.2,
+      "dec": 2,
+      "vol": "0.01 млрд ₽",
+      "volatility": 0.46
+    },
+    {
       "sym": "POSI",
       "name": "iПозитив",
-      "price": 1028.0,
-      "chg": 0.0,
+      "price": 1028.6,
+      "chg": 0.06,
       "dec": 0,
-      "vol": "0.00 млрд ₽",
+      "vol": "0.01 млрд ₽",
       "volatility": 0.76
     },
     {
       "sym": "SELG",
       "name": "Селигдар",
-      "price": 36.59,
-      "chg": 0.8,
+      "price": 36.55,
+      "chg": 0.69,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.96
     },
     {
-      "sym": "AFKS",
-      "name": "Система ао",
-      "price": 7.144,
-      "chg": -0.11,
+      "sym": "MSNG",
+      "name": "+МосЭнерго",
+      "price": 1.3375,
+      "chg": -0.22,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.46
+      "volatility": 0.78
+    },
+    {
+      "sym": "IRAO",
+      "name": "ИнтерРАОао",
+      "price": 2.381,
+      "chg": 0.13,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.29
     },
     {
       "sym": "FMMM",
@@ -998,47 +1016,56 @@
     {
       "sym": "FLOT",
       "name": "Совкомфлот",
-      "price": 81.39,
-      "chg": -0.15,
+      "price": 81.3,
+      "chg": -0.26,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.83
     },
     {
+      "sym": "CASH",
+      "name": "CASH ETF",
+      "price": 13.757,
+      "chg": 0.03,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.01
+    },
+    {
       "sym": "AFLT",
       "name": "Аэрофлот",
-      "price": 32.62,
-      "chg": 0.28,
+      "price": 32.6,
+      "chg": 0.22,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.25
     },
     {
-      "sym": "MSNG",
-      "name": "+МосЭнерго",
-      "price": 1.3385,
-      "chg": -0.15,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.78
-    },
-    {
-      "sym": "IRAO",
-      "name": "ИнтерРАОао",
-      "price": 2.38,
-      "chg": 0.08,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.23
-    },
-    {
       "sym": "MTLRP",
       "name": "Мечел ап",
-      "price": 37.75,
-      "chg": 0.0,
+      "price": 37.7,
+      "chg": -0.13,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 1.06
+      "volatility": 1.19
+    },
+    {
+      "sym": "UPRO",
+      "name": "Юнипро ао",
+      "price": 0.9925,
+      "chg": 0.1,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.61
+    },
+    {
+      "sym": "RTKM",
+      "name": "Ростел -ао",
+      "price": 38.96,
+      "chg": 0.15,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.21
     },
     {
       "sym": "KRKNP",
@@ -1050,6 +1077,15 @@
       "volatility": 2.97
     },
     {
+      "sym": "BELU",
+      "name": "НоваБев ао",
+      "price": 248.8,
+      "chg": -0.32,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.88
+    },
+    {
       "sym": "UGLD",
       "name": "ЮГК",
       "price": 0.7215,
@@ -1059,85 +1095,58 @@
       "volatility": 0.14
     },
     {
-      "sym": "BELU",
-      "name": "НоваБев ао",
-      "price": 249.2,
-      "chg": -0.16,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.88
-    },
-    {
-      "sym": "LMBZ",
-      "name": "Ламбумиз",
-      "price": 462.0,
-      "chg": 0.54,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 3.16
-    },
-    {
       "sym": "RNFT",
       "name": "РуссНфт ао",
-      "price": 84.9,
-      "chg": -0.18,
+      "price": 85.05,
+      "chg": 0.0,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.59
     },
     {
-      "sym": "UPRO",
-      "name": "Юнипро ао",
-      "price": 0.99,
-      "chg": -0.15,
+      "sym": "LMBZ",
+      "name": "Ламбумиз",
+      "price": 462.5,
+      "chg": 0.65,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.61
-    },
-    {
-      "sym": "MRKU",
-      "name": "Россети Ур",
-      "price": 0.6334,
-      "chg": 0.28,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 1.39
-    },
-    {
-      "sym": "RTKM",
-      "name": "Ростел -ао",
-      "price": 38.97,
-      "chg": 0.18,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.21
-    },
-    {
-      "sym": "MDMG",
-      "name": "MDMG-ао",
-      "price": 1291.0,
-      "chg": 0.18,
-      "dec": 0,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.54
+      "volatility": 3.16
     },
     {
       "sym": "BTBR",
       "name": "iВ2В-РТС",
-      "price": 125.92,
-      "chg": 0.91,
+      "price": 126.04,
+      "chg": 1.01,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 1.39
     },
     {
-      "sym": "RGSS",
-      "name": "РГС СК ао",
-      "price": 0.183,
-      "chg": 1.67,
+      "sym": "MRKU",
+      "name": "Россети Ур",
+      "price": 0.635,
+      "chg": 0.54,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 4.44
+      "volatility": 1.39
+    },
+    {
+      "sym": "VSEH",
+      "name": "ВИ.ру",
+      "price": 72.89,
+      "chg": -0.38,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.52
+    },
+    {
+      "sym": "MDMG",
+      "name": "MDMG-ао",
+      "price": 1291.3,
+      "chg": 0.2,
+      "dec": 0,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.54
     },
     {
       "sym": "EUTR",
@@ -1149,6 +1158,24 @@
       "volatility": 1.41
     },
     {
+      "sym": "RGSS",
+      "name": "РГС СК ао",
+      "price": 0.1832,
+      "chg": 1.78,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 4.44
+    },
+    {
+      "sym": "AQUA",
+      "name": "ИНАРКТИКА",
+      "price": 315.0,
+      "chg": 0.06,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.48
+    },
+    {
       "sym": "MBNK",
       "name": "МТС Банк",
       "price": 911.5,
@@ -1158,31 +1185,13 @@
       "volatility": 0.27
     },
     {
-      "sym": "VSEH",
-      "name": "ВИ.ру",
-      "price": 73.03,
-      "chg": -0.19,
+      "sym": "OZPH",
+      "name": "iОзонФарм",
+      "price": 44.76,
+      "chg": -0.13,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.34
-    },
-    {
-      "sym": "AQUA",
-      "name": "ИНАРКТИКА",
-      "price": 315.1,
-      "chg": 0.1,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.48
-    },
-    {
-      "sym": "AKMP",
-      "name": "AKMP ETF",
-      "price": 1.2704,
-      "chg": 0.02,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.02
+      "volatility": 0.49
     },
     {
       "sym": "MRKC",
@@ -1194,10 +1203,28 @@
       "volatility": 0.51
     },
     {
+      "sym": "UNAC",
+      "name": "iАвиастКао",
+      "price": 0.379,
+      "chg": 0.53,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 1.46
+    },
+    {
+      "sym": "AKMP",
+      "name": "AKMP ETF",
+      "price": 1.2704,
+      "chg": 0.02,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.02
+    },
+    {
       "sym": "FIXR",
       "name": "Фикс Прайс",
-      "price": 0.3884,
-      "chg": -0.36,
+      "price": 0.3882,
+      "chg": -0.41,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.44
@@ -1205,56 +1232,47 @@
     {
       "sym": "RASP",
       "name": "Распадская",
-      "price": 128.65,
-      "chg": 0.43,
+      "price": 128.75,
+      "chg": 0.51,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.59
     },
     {
-      "sym": "OZPH",
-      "name": "iОзонФарм",
-      "price": 44.72,
-      "chg": -0.22,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.49
-    },
-    {
       "sym": "SBMX",
       "name": "SBMX ETF",
-      "price": 16.275,
-      "chg": 0.08,
+      "price": 16.276,
+      "chg": 0.09,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.4
     },
     {
-      "sym": "UNAC",
-      "name": "iАвиастКао",
-      "price": 0.38,
-      "chg": 0.8,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 1.46
-    },
-    {
       "sym": "LENT",
       "name": "Лента ао",
-      "price": 1739.5,
-      "chg": -0.49,
+      "price": 1740.0,
+      "chg": -0.46,
       "dec": 0,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.51
+      "volatility": 0.54
     },
     {
       "sym": "IRKT",
       "name": "Яковлев-3",
-      "price": 18.32,
-      "chg": 0.0,
+      "price": 18.3,
+      "chg": -0.11,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.55
+    },
+    {
+      "sym": "JNOSP",
+      "name": "Слав-ЯНОСп",
+      "price": 11.74,
+      "chg": -2.0,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 2.34
     },
     {
       "sym": "LSNGP",
@@ -1268,20 +1286,11 @@
     {
       "sym": "TRMK",
       "name": "ТМК ао",
-      "price": 58.46,
-      "chg": -0.48,
+      "price": 58.56,
+      "chg": -0.31,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.44
-    },
-    {
-      "sym": "YKENP",
-      "name": "Якутскэн-п",
-      "price": 0.3,
-      "chg": 2.74,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 3.08
     },
     {
       "sym": "BANEP",
@@ -1293,13 +1302,13 @@
       "volatility": 0.34
     },
     {
-      "sym": "SBGB",
-      "name": "SBGB ETF",
-      "price": 15.331,
-      "chg": 0.11,
+      "sym": "YKENP",
+      "name": "Якутскэн-п",
+      "price": 0.3,
+      "chg": 2.74,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.18
+      "volatility": 3.08
     },
     {
       "sym": "FLOW",
@@ -1311,22 +1320,67 @@
       "volatility": 0.02
     },
     {
-      "sym": "CASH",
-      "name": "CASH ETF",
-      "price": 13.757,
-      "chg": 0.03,
+      "sym": "ENPG",
+      "name": "ЭН+ГРУП ао",
+      "price": 291.15,
+      "chg": -0.14,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.01
+      "volatility": 0.53
+    },
+    {
+      "sym": "SBGB",
+      "name": "SBGB ETF",
+      "price": 15.345,
+      "chg": 0.2,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.18
+    },
+    {
+      "sym": "HYDR",
+      "name": "РусГидро",
+      "price": 0.3844,
+      "chg": 0.23,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.7
+    },
+    {
+      "sym": "SFIN",
+      "name": "ЭсЭфАй ао",
+      "price": 552.0,
+      "chg": 0.0,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.65
+    },
+    {
+      "sym": "YKEN",
+      "name": "Якутскэнрг",
+      "price": 0.407,
+      "chg": 2.52,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 1.76
     },
     {
       "sym": "ROLO",
       "name": "Русолово",
-      "price": 0.36,
-      "chg": 0.56,
+      "price": 0.3608,
+      "chg": 0.78,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 1.23
+    },
+    {
+      "sym": "VSMO",
+      "name": "ВСМПО-АВСМ",
+      "price": 22860.0,
+      "chg": 0.09,
+      "dec": 0,
+      "vol": "0.00 млрд ₽",
+      "volatility": 1.31
     },
     {
       "sym": "GEMC",
@@ -1338,85 +1392,58 @@
       "volatility": 1.16
     },
     {
-      "sym": "VSMO",
-      "name": "ВСМПО-АВСМ",
-      "price": 22840.0,
-      "chg": 0.0,
-      "dec": 0,
-      "vol": "0.00 млрд ₽",
-      "volatility": 1.31
-    },
-    {
       "sym": "WUSH",
       "name": "iВУШХолднг",
-      "price": 37.02,
-      "chg": 0.19,
+      "price": 37.03,
+      "chg": 0.22,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.62
     },
     {
-      "sym": "YKEN",
-      "name": "Якутскэнрг",
-      "price": 0.405,
-      "chg": 2.02,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 1.76
-    },
-    {
-      "sym": "FESH",
-      "name": "ДВМП ао",
-      "price": 58.61,
-      "chg": 0.58,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.67
-    },
-    {
       "sym": "CNRU",
       "name": "iЦиан",
-      "price": 645.0,
-      "chg": 0.22,
+      "price": 645.2,
+      "chg": 0.25,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 1.15
     },
     {
+      "sym": "FESH",
+      "name": "ДВМП ао",
+      "price": 58.63,
+      "chg": 0.62,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.67
+    },
+    {
+      "sym": "LSRG",
+      "name": "ЛСР ао",
+      "price": 493.8,
+      "chg": -0.24,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.89
+    },
+    {
       "sym": "SGZH",
       "name": "Сегежа",
-      "price": 0.6655,
-      "chg": 0.08,
+      "price": 0.666,
+      "chg": 0.15,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.98
     },
     {
-      "sym": "SFIN",
-      "name": "ЭсЭфАй ао",
-      "price": 551.8,
-      "chg": -0.04,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.65
-    },
-    {
       "sym": "RBCM",
       "name": "ГК РБК ао",
-      "price": 7.615,
-      "chg": 0.33,
+      "price": 7.63,
+      "chg": 0.53,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 1.12
-    },
-    {
-      "sym": "UWGN",
-      "name": "ОВК ао",
-      "price": 19.6,
-      "chg": -0.1,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.51
+      "volatility": 1.32
     },
     {
       "sym": "PRMD",
@@ -1430,20 +1457,29 @@
     {
       "sym": "CBOM",
       "name": "МКБ ао",
-      "price": 8.974,
-      "chg": -0.55,
+      "price": 8.987,
+      "chg": -0.41,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.69
     },
     {
-      "sym": "VSYD",
-      "name": "ВыбСудЗ ао",
-      "price": 11350.0,
-      "chg": -2.16,
-      "dec": 0,
+      "sym": "UWGN",
+      "name": "ОВК ао",
+      "price": 19.6,
+      "chg": -0.1,
+      "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 1.72
+      "volatility": 0.51
+    },
+    {
+      "sym": "PIKK",
+      "name": "ПИК ао",
+      "price": 540.1,
+      "chg": 0.24,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.58
     },
     {
       "sym": "ASTR",
@@ -1455,28 +1491,37 @@
       "volatility": 0.44
     },
     {
-      "sym": "PIKK",
-      "name": "ПИК ао",
-      "price": 540.5,
-      "chg": 0.32,
-      "dec": 2,
+      "sym": "VSYD",
+      "name": "ВыбСудЗ ао",
+      "price": 11350.0,
+      "chg": -2.16,
+      "dec": 0,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.58
+      "volatility": 1.72
     },
     {
-      "sym": "ENPG",
-      "name": "ЭН+ГРУП ао",
-      "price": 291.45,
-      "chg": -0.03,
+      "sym": "OGKB",
+      "name": "ОГК-2 ао",
+      "price": 0.2148,
+      "chg": 0.19,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.53
+      "volatility": 1.87
+    },
+    {
+      "sym": "NMTP",
+      "name": "НМТП ао",
+      "price": 6.69,
+      "chg": 0.07,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.67
     },
     {
       "sym": "MRKV",
       "name": "РсетВол ао",
-      "price": 0.20035,
-      "chg": 0.25,
+      "price": 0.2003,
+      "chg": 0.23,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.43
@@ -1484,35 +1529,53 @@
     {
       "sym": "MRKP",
       "name": "РСетиЦП ао",
-      "price": 0.5225,
-      "chg": 0.06,
+      "price": 0.5224,
+      "chg": 0.04,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.36
     },
     {
-      "sym": "HYDR",
-      "name": "РусГидро",
-      "price": 0.3845,
-      "chg": 0.26,
+      "sym": "BAZA",
+      "name": "iБАЗИС",
+      "price": 106.28,
+      "chg": 1.07,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.7
+      "volatility": 0.82
     },
     {
-      "sym": "NMTP",
-      "name": "НМТП ао",
-      "price": 6.68,
-      "chg": -0.07,
+      "sym": "ZAYM",
+      "name": "Займер ао",
+      "price": 128.15,
+      "chg": 0.04,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.67
+      "volatility": 0.98
+    },
+    {
+      "sym": "MRKZ",
+      "name": "РСетиСЗ ао",
+      "price": 0.12795,
+      "chg": 0.08,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.31
+    },
+    {
+      "sym": "RTKMP",
+      "name": "Ростел -ап",
+      "price": 40.3,
+      "chg": 0.25,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 1.0
     },
     {
       "sym": "NKHP",
       "name": "НКХП ао",
-      "price": 380.0,
-      "chg": 0.53,
+      "price": 378.5,
+      "chg": 0.13,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.66
@@ -1520,35 +1583,35 @@
     {
       "sym": "SOFL",
       "name": "iСофтлайн",
-      "price": 47.5,
-      "chg": 0.17,
+      "price": 47.52,
+      "chg": 0.21,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.59
     },
     {
-      "sym": "ZAYM",
-      "name": "Займер ао",
-      "price": 128.25,
+      "sym": "VSYDP",
+      "name": "ВыбСудЗ ап",
+      "price": 7950.0,
+      "chg": -2.45,
+      "dec": 0,
+      "vol": "0.00 млрд ₽",
+      "volatility": 2.45
+    },
+    {
+      "sym": "MVID",
+      "name": "М.видео",
+      "price": 41.55,
       "chg": 0.12,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.98
-    },
-    {
-      "sym": "BAZA",
-      "name": "iБАЗИС",
-      "price": 106.0,
-      "chg": 0.8,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.67
+      "volatility": 1.33
     },
     {
       "sym": "VRSB",
       "name": "ТНСэнВорон",
-      "price": 242.0,
-      "chg": -1.02,
+      "price": 242.5,
+      "chg": -0.82,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 2.66
@@ -1563,33 +1626,6 @@
       "volatility": 1.72
     },
     {
-      "sym": "VSYDP",
-      "name": "ВыбСудЗ ап",
-      "price": 7950.0,
-      "chg": -2.45,
-      "dec": 0,
-      "vol": "0.00 млрд ₽",
-      "volatility": 2.45
-    },
-    {
-      "sym": "DZRDP",
-      "name": "ДонскЗР п",
-      "price": 1800.0,
-      "chg": 2.27,
-      "dec": 0,
-      "vol": "0.00 млрд ₽",
-      "volatility": 1.14
-    },
-    {
-      "sym": "MVID",
-      "name": "М.видео",
-      "price": 41.6,
-      "chg": 0.24,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 1.2
-    },
-    {
       "sym": "GLRX",
       "name": "ГЛОРАКС",
       "price": 36.72,
@@ -1597,6 +1633,24 @@
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 1.63
+    },
+    {
+      "sym": "DZRDP",
+      "name": "ДонскЗР п",
+      "price": 1790.0,
+      "chg": 1.7,
+      "dec": 0,
+      "vol": "0.00 млрд ₽",
+      "volatility": 1.14
+    },
+    {
+      "sym": "AKGD",
+      "name": "AKGD ETF",
+      "price": 256.55,
+      "chg": 0.03,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.39
     },
     {
       "sym": "FMBR",
@@ -1617,31 +1671,22 @@
       "volatility": 2.21
     },
     {
-      "sym": "AKGD",
-      "name": "AKGD ETF",
-      "price": 256.74,
-      "chg": 0.11,
+      "sym": "PMSBP",
+      "name": "ПермьЭнС-п",
+      "price": 457.0,
+      "chg": 0.4,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.39
+      "volatility": 1.67
     },
     {
-      "sym": "LSRG",
-      "name": "ЛСР ао",
-      "price": 495.2,
-      "chg": 0.04,
+      "sym": "RENI",
+      "name": "Ренессанс",
+      "price": 67.52,
+      "chg": 0.09,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.89
-    },
-    {
-      "sym": "MRKZ",
-      "name": "РСетиСЗ ао",
-      "price": 0.12805,
-      "chg": 0.16,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.23
+      "volatility": 0.36
     },
     {
       "sym": "XXXXXX",
@@ -1664,8 +1709,8 @@
     {
       "sym": "GEMA",
       "name": "iММЦБ ао",
-      "price": 99.6,
-      "chg": -1.48,
+      "price": 99.5,
+      "chg": -1.58,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 2.87
@@ -1680,6 +1725,15 @@
       "volatility": 0.9
     },
     {
+      "sym": "DATA",
+      "name": "iАренадата",
+      "price": 85.96,
+      "chg": 0.09,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.44
+    },
+    {
       "sym": "CHKZ",
       "name": "ЧКПЗ ао",
       "price": 16350.0,
@@ -1689,31 +1743,13 @@
       "volatility": 1.52
     },
     {
-      "sym": "RTKMP",
-      "name": "Ростел -ап",
-      "price": 40.3,
-      "chg": 0.25,
+      "sym": "KCHEP",
+      "name": "КамчатЭ ап",
+      "price": 1.11,
+      "chg": 0.0,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 1.0
-    },
-    {
-      "sym": "DATA",
-      "name": "iАренадата",
-      "price": 85.94,
-      "chg": 0.07,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.44
-    },
-    {
-      "sym": "RENI",
-      "name": "Ренессанс",
-      "price": 67.5,
-      "chg": 0.06,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.36
+      "volatility": 3.15
     },
     {
       "sym": "MFGSP",
@@ -1725,19 +1761,28 @@
       "volatility": 0.88
     },
     {
-      "sym": "KCHEP",
-      "name": "КамчатЭ ап",
-      "price": 1.105,
-      "chg": -0.45,
+      "sym": "INCB",
+      "name": "Инкаб",
+      "price": 62.84,
+      "chg": -1.72,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 3.15
+      "volatility": 2.88
+    },
+    {
+      "sym": "TMOS",
+      "name": "TMOS ETF",
+      "price": 5.68,
+      "chg": 0.0,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.53
     },
     {
       "sym": "SBLB",
       "name": "SBLB ETF",
-      "price": 12.174,
-      "chg": 0.02,
+      "price": 12.178,
+      "chg": 0.05,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.18
@@ -1752,15 +1797,6 @@
       "volatility": 0.78
     },
     {
-      "sym": "TMOS",
-      "name": "TMOS ETF",
-      "price": 5.69,
-      "chg": 0.18,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.53
-    },
-    {
       "sym": "MFGS",
       "name": "Мегион-ао",
       "price": 308.0,
@@ -1770,13 +1806,58 @@
       "volatility": 1.3
     },
     {
+      "sym": "DELI",
+      "name": "iКаршеринг",
+      "price": 44.3,
+      "chg": 0.23,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.9
+    },
+    {
+      "sym": "DZRD",
+      "name": "ДонскЗР",
+      "price": 1210.0,
+      "chg": 1.68,
+      "dec": 0,
+      "vol": "0.00 млрд ₽",
+      "volatility": 2.1
+    },
+    {
       "sym": "EELT",
       "name": "ЕвроЭлтех",
-      "price": 7.62,
-      "chg": -0.78,
+      "price": 7.64,
+      "chg": -0.52,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 1.82
+    },
+    {
+      "sym": "VJGZP",
+      "name": "Варьеган-п",
+      "price": 1160.0,
+      "chg": 0.0,
+      "dec": 0,
+      "vol": "0.00 млрд ₽",
+      "volatility": 1.55
+    },
+    {
+      "sym": "SLEN",
+      "name": "Сахэнер ао",
+      "price": 3.1,
+      "chg": -0.64,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.48
+    },
+    {
+      "sym": "IVAT",
+      "name": "iИВА",
+      "price": 63.85,
+      "chg": 0.16,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 1.1
     },
     {
       "sym": "RTSBP",
@@ -1806,31 +1887,49 @@
       "volatility": 1.04
     },
     {
-      "sym": "MGKL",
-      "name": "МГКЛ",
-      "price": 1.904,
-      "chg": 0.47,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.63
-    },
-    {
       "sym": "DVEC",
       "name": "ДЭК ао",
-      "price": 1.685,
-      "chg": 0.06,
+      "price": 1.683,
+      "chg": -0.06,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 1.37
     },
     {
-      "sym": "IVAT",
-      "name": "iИВА",
-      "price": 63.85,
-      "chg": 0.16,
+      "sym": "MGKL",
+      "name": "МГКЛ",
+      "price": 1.906,
+      "chg": 0.58,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 1.1
+      "volatility": 0.63
+    },
+    {
+      "sym": "ETLN",
+      "name": "ЭталонГруп",
+      "price": 18.98,
+      "chg": 0.21,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.42
+    },
+    {
+      "sym": "APTK",
+      "name": "Аптеки36и6",
+      "price": 6.402,
+      "chg": 0.57,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.63
+    },
+    {
+      "sym": "LEAS",
+      "name": "Европлан",
+      "price": 670.5,
+      "chg": 0.09,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.07
     },
     {
       "sym": "UKUZ",
@@ -1851,85 +1950,76 @@
       "volatility": 1.05
     },
     {
-      "sym": "LEAS",
-      "name": "Европлан",
-      "price": 670.0,
-      "chg": 0.01,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.01
-    },
-    {
       "sym": "GCHE",
       "name": "ЧеркизГ-ао",
-      "price": 3487.0,
-      "chg": -0.17,
+      "price": 3488.0,
+      "chg": -0.14,
       "dec": 0,
       "vol": "0.00 млрд ₽",
       "volatility": 0.26
     },
     {
+      "sym": "PMSB",
+      "name": "ПермьЭнСб",
+      "price": 428.3,
+      "chg": -0.79,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 1.18
+    },
+    {
       "sym": "DIAS",
       "name": "iДиасофт",
-      "price": 1120.5,
-      "chg": 0.0,
+      "price": 1123.0,
+      "chg": 0.22,
       "dec": 0,
       "vol": "0.00 млрд ₽",
       "volatility": 0.22
     },
     {
+      "sym": "LSNG",
+      "name": "РСетиЛЭ",
+      "price": 13.66,
+      "chg": -0.07,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.51
+    },
+    {
+      "sym": "HNFG",
+      "name": "ХЭНДЕРСОН",
+      "price": 281.2,
+      "chg": 0.14,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.78
+    },
+    {
       "sym": "LIFE",
       "name": "Фармсинтез",
-      "price": 1.585,
-      "chg": 0.32,
+      "price": 1.58,
+      "chg": 0.0,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.95
     },
     {
-      "sym": "DELI",
-      "name": "iКаршеринг",
-      "price": 44.35,
-      "chg": 0.34,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.9
-    },
-    {
       "sym": "WTCMP",
       "name": "ЦМТ ап",
-      "price": 13.04,
-      "chg": 2.35,
+      "price": 13.02,
+      "chg": 2.2,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 1.41
     },
     {
-      "sym": "APTK",
-      "name": "Аптеки36и6",
-      "price": 6.41,
-      "chg": 0.69,
+      "sym": "MSRS",
+      "name": "РСетиМР ао",
+      "price": 1.6035,
+      "chg": -0.28,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.63
-    },
-    {
-      "sym": "PMSBP",
-      "name": "ПермьЭнС-п",
-      "price": 456.2,
-      "chg": 0.22,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 1.41
-    },
-    {
-      "sym": "LSNG",
-      "name": "РСетиЛЭ",
-      "price": 13.61,
-      "chg": -0.44,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.51
+      "volatility": 0.59
     },
     {
       "sym": "NKNCP",
@@ -1941,15 +2031,6 @@
       "volatility": 0.23
     },
     {
-      "sym": "SLEN",
-      "name": "Сахэнер ао",
-      "price": 3.1,
-      "chg": -0.64,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.32
-    },
-    {
       "sym": "MRKS",
       "name": "РсетСиб ао",
       "price": 0.4795,
@@ -1959,19 +2040,19 @@
       "volatility": 0.94
     },
     {
-      "sym": "MSRS",
-      "name": "РСетиМР ао",
-      "price": 1.606,
-      "chg": -0.12,
+      "sym": "TGKA",
+      "name": "ТГК-1",
+      "price": 0.004362,
+      "chg": -0.46,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.59
+      "volatility": 0.87
     },
     {
       "sym": "KMAZ",
       "name": "КАМАЗ",
-      "price": 55.2,
-      "chg": 0.0,
+      "price": 55.3,
+      "chg": 0.18,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.18
@@ -1995,31 +2076,31 @@
       "volatility": 0.26
     },
     {
-      "sym": "INCB",
-      "name": "Инкаб",
-      "price": 63.08,
-      "chg": -1.35,
+      "sym": "PSMM",
+      "name": "PSMM ETF",
+      "price": 14.733,
+      "chg": 0.01,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 1.6
+      "volatility": 0.01
     },
     {
-      "sym": "ETLN",
-      "name": "ЭталонГруп",
-      "price": 19.0,
-      "chg": 0.32,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.42
-    },
-    {
-      "sym": "DZRD",
-      "name": "ДонскЗР",
-      "price": 1205.0,
-      "chg": 1.26,
+      "sym": "RKKE",
+      "name": "ЭнергияРКК",
+      "price": 11200.0,
+      "chg": 0.0,
       "dec": 0,
       "vol": "0.00 млрд ₽",
-      "volatility": 1.68
+      "volatility": 0.0
+    },
+    {
+      "sym": "AKIE",
+      "name": "ETF AKIE",
+      "price": 874.27,
+      "chg": 0.15,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.49
     },
     {
       "sym": "TTLK",
@@ -2040,22 +2121,31 @@
       "volatility": 0.76
     },
     {
-      "sym": "HNFG",
-      "name": "ХЭНДЕРСОН",
-      "price": 281.0,
-      "chg": 0.07,
+      "sym": "SVAV",
+      "name": "СОЛЛЕРС",
+      "price": 369.0,
+      "chg": -0.14,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.78
+      "volatility": 0.68
     },
     {
-      "sym": "TGKA",
-      "name": "ТГК-1",
-      "price": 0.004366,
-      "chg": -0.37,
+      "sym": "TORSP",
+      "name": "РСТомск ап",
+      "price": 0.524,
+      "chg": -0.19,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.87
+      "volatility": 0.0
+    },
+    {
+      "sym": "MAGE",
+      "name": "МагадЭн ао",
+      "price": 2.68,
+      "chg": 1.13,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 1.7
     },
     {
       "sym": "RZSB",
@@ -2076,22 +2166,22 @@
       "volatility": 1.59
     },
     {
-      "sym": "MAGE",
-      "name": "МагадЭн ао",
-      "price": 2.68,
-      "chg": 1.13,
+      "sym": "ABIO",
+      "name": "iАРТГЕН ао",
+      "price": 45.18,
+      "chg": 0.0,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 1.7
+      "volatility": 0.31
     },
     {
-      "sym": "OGKB",
-      "name": "ОГК-2 ао",
-      "price": 0.2147,
-      "chg": 0.14,
+      "sym": "TASBP",
+      "name": "ТамбЭнСб-п",
+      "price": 0.866,
+      "chg": 0.0,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 1.87
+      "volatility": 0.0
     },
     {
       "sym": "MRSB",
@@ -2101,42 +2191,6 @@
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.41
-    },
-    {
-      "sym": "PMSB",
-      "name": "ПермьЭнСб",
-      "price": 430.2,
-      "chg": -0.35,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.74
-    },
-    {
-      "sym": "SVAV",
-      "name": "СОЛЛЕРС",
-      "price": 370.0,
-      "chg": 0.14,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.68
-    },
-    {
-      "sym": "ABIO",
-      "name": "iАРТГЕН ао",
-      "price": 45.08,
-      "chg": -0.22,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.22
-    },
-    {
-      "sym": "PSMM",
-      "name": "PSMM ETF",
-      "price": 14.733,
-      "chg": 0.01,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.01
     },
     {
       "sym": "LVHK",
@@ -2159,8 +2213,8 @@
     {
       "sym": "PSGM",
       "name": "PSGM ETF",
-      "price": 13.495,
-      "chg": 0.57,
+      "price": 13.489,
+      "chg": 0.53,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.75
@@ -2175,6 +2229,15 @@
       "volatility": 0.39
     },
     {
+      "sym": "AMNR",
+      "name": "AMNR ETF",
+      "price": 157.545,
+      "chg": 0.03,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.04
+    },
+    {
       "sym": "DIOD",
       "name": "ЗаводДИОД",
       "price": 7.75,
@@ -2184,22 +2247,31 @@
       "volatility": 1.81
     },
     {
-      "sym": "AMNR",
-      "name": "AMNR ETF",
-      "price": 157.549,
-      "chg": 0.04,
+      "sym": "AKME",
+      "name": "ETF AKME",
+      "price": 170.94,
+      "chg": -0.2,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.04
+      "volatility": 0.22
     },
     {
       "sym": "GTRK",
       "name": "ГТМ ао",
-      "price": 46.5,
+      "price": 46.7,
+      "chg": 0.43,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.65
+    },
+    {
+      "sym": "TGKB",
+      "name": "ТГК-2",
+      "price": 0.00464,
       "chg": 0.0,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.22
+      "volatility": 0.0
     },
     {
       "sym": "TGKBP",
@@ -2211,37 +2283,46 @@
       "volatility": 0.43
     },
     {
-      "sym": "AKME",
-      "name": "ETF AKME",
-      "price": 171.0,
-      "chg": -0.16,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.22
-    },
-    {
-      "sym": "AKIE",
-      "name": "ETF AKIE",
-      "price": 873.9,
-      "chg": 0.1,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.1
-    },
-    {
       "sym": "OKEY",
       "name": "OKEY-гдр",
-      "price": 50.75,
-      "chg": -0.14,
+      "price": 50.67,
+      "chg": -0.3,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 5.53
     },
     {
+      "sym": "GECO",
+      "name": "iГЕНЕТИКО",
+      "price": 14.72,
+      "chg": 0.07,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.88
+    },
+    {
+      "sym": "KLVZ",
+      "name": "Кристалл",
+      "price": 1.936,
+      "chg": 0.73,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 1.98
+    },
+    {
+      "sym": "SBBC",
+      "name": "SBBC ETF",
+      "price": 9.066,
+      "chg": -0.19,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.94
+    },
+    {
       "sym": "AKQU",
       "name": "AKQU ETF",
-      "price": 64.95,
-      "chg": 0.51,
+      "price": 64.86,
+      "chg": 0.37,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.62
@@ -2256,13 +2337,13 @@
       "volatility": 0.43
     },
     {
-      "sym": "KLVZ",
-      "name": "Кристалл",
-      "price": 1.94,
-      "chg": 0.94,
+      "sym": "KZOS",
+      "name": "ОргСинт ао",
+      "price": 46.5,
+      "chg": 1.09,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 1.98
+      "volatility": 1.3
     },
     {
       "sym": "SVETP",
@@ -2274,19 +2355,19 @@
       "volatility": 1.0
     },
     {
-      "sym": "KZOS",
-      "name": "ОргСинт ао",
-      "price": 46.4,
-      "chg": 0.87,
+      "sym": "PRFN",
+      "name": "ТЕПЛАНТ ао",
+      "price": 3.014,
+      "chg": -0.53,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 1.3
+      "volatility": 1.12
     },
     {
       "sym": "WTCM",
       "name": "ЦМТ ао",
-      "price": 15.04,
-      "chg": -0.27,
+      "price": 15.18,
+      "chg": 0.66,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 1.06
@@ -2301,22 +2382,22 @@
       "volatility": 0.56
     },
     {
-      "sym": "PRFN",
-      "name": "ТЕПЛАНТ ао",
-      "price": 3.016,
-      "chg": -0.46,
+      "sym": "CHGZ",
+      "name": "РН-ЗапСиб",
+      "price": 115.2,
+      "chg": -0.17,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 1.12
+      "volatility": 1.56
     },
     {
-      "sym": "GECO",
-      "name": "iГЕНЕТИКО",
-      "price": 14.73,
-      "chg": 0.14,
+      "sym": "KROTP",
+      "name": "КрасОкт-1п",
+      "price": 504.0,
+      "chg": 0.0,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.88
+      "volatility": 0.0
     },
     {
       "sym": "AKUP",
@@ -2328,13 +2409,22 @@
       "volatility": 0.16
     },
     {
-      "sym": "CHGZ",
-      "name": "РН-ЗапСиб",
-      "price": 115.4,
-      "chg": 0.0,
+      "sym": "KRSBP",
+      "name": "Красэсб ап",
+      "price": 20.26,
+      "chg": 0.4,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 1.39
+      "volatility": 0.4
+    },
+    {
+      "sym": "NFAZ",
+      "name": "НЕФАЗ",
+      "price": 200.0,
+      "chg": 1.78,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.51
     },
     {
       "sym": "ABRD",
@@ -2355,15 +2445,6 @@
       "volatility": 1.01
     },
     {
-      "sym": "KROTP",
-      "name": "КрасОкт-1п",
-      "price": 504.0,
-      "chg": 0.0,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.0
-    },
-    {
       "sym": "AKGP",
       "name": "AKGP ETF",
       "price": 1.176,
@@ -2373,13 +2454,49 @@
       "volatility": 0.6
     },
     {
+      "sym": "UNKL",
+      "name": "ЮУНК ао",
+      "price": 3080.0,
+      "chg": 0.0,
+      "dec": 0,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.32
+    },
+    {
       "sym": "NKNC",
       "name": "НКНХ ао",
-      "price": 45.45,
-      "chg": 0.0,
+      "price": 45.25,
+      "chg": -0.44,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 1.1
+    },
+    {
+      "sym": "MRKY",
+      "name": "РоссЮг ао",
+      "price": 0.07085,
+      "chg": -0.28,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.91
+    },
+    {
+      "sym": "SBPS",
+      "name": "SBPS ETF",
+      "price": 2.735,
+      "chg": 0.55,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 2.57
+    },
+    {
+      "sym": "KOGK",
+      "name": "КоршГОК ао",
+      "price": 224.6,
+      "chg": -2.18,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 2.26
     },
     {
       "sym": "MAGEP",
@@ -2400,33 +2517,6 @@
       "volatility": 0.71
     },
     {
-      "sym": "SBPS",
-      "name": "SBPS ETF",
-      "price": 2.74,
-      "chg": 0.74,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 2.57
-    },
-    {
-      "sym": "KOGK",
-      "name": "КоршГОК ао",
-      "price": 224.6,
-      "chg": -2.18,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 2.26
-    },
-    {
-      "sym": "MRKY",
-      "name": "РоссЮг ао",
-      "price": 0.07085,
-      "chg": -0.28,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.91
-    },
-    {
       "sym": "SAGOP",
       "name": "СамарЭн-ап",
       "price": 2.125,
@@ -2434,6 +2524,33 @@
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.0
+    },
+    {
+      "sym": "SBHI",
+      "name": "SBHI ETF",
+      "price": 6.366,
+      "chg": -0.56,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.62
+    },
+    {
+      "sym": "VRSBP",
+      "name": "ТНСэнВор-п",
+      "price": 122.0,
+      "chg": 0.66,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.17
+    },
+    {
+      "sym": "BANE",
+      "name": "Башнефт ао",
+      "price": 1214.0,
+      "chg": -0.45,
+      "dec": 0,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.29
     },
     {
       "sym": "ZVEZ",
@@ -2463,13 +2580,13 @@
       "volatility": 2.12
     },
     {
-      "sym": "BANE",
-      "name": "Башнефт ао",
-      "price": 1215.0,
-      "chg": -0.37,
-      "dec": 0,
+      "sym": "MISB",
+      "name": "ТНСэнМарЭл",
+      "price": 48.7,
+      "chg": 0.0,
+      "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.29
+      "volatility": 0.0
     },
     {
       "sym": "LPSB",
@@ -2481,27 +2598,9 @@
       "volatility": 0.1
     },
     {
-      "sym": "TGKB",
-      "name": "ТГК-2",
-      "price": 0.00464,
-      "chg": 0.0,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.0
-    },
-    {
       "sym": "ROST",
       "name": "РОСИНТЕРао",
       "price": 68.6,
-      "chg": 0.0,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.0
-    },
-    {
-      "sym": "TASBP",
-      "name": "ТамбЭнСб-п",
-      "price": 0.866,
       "chg": 0.0,
       "dec": 2,
       "vol": "0.00 млрд ₽",
@@ -2526,10 +2625,37 @@
       "volatility": 0.0
     },
     {
+      "sym": "NAUK",
+      "name": "iНПОНаука",
+      "price": 421.0,
+      "chg": 0.36,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.24
+    },
+    {
+      "sym": "AMGL",
+      "name": "AMGL ETF",
+      "price": 137.0,
+      "chg": -0.58,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.29
+    },
+    {
+      "sym": "CARM",
+      "name": "СТГ",
+      "price": 0.6965,
+      "chg": 0.07,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.65
+    },
+    {
       "sym": "KZOSP",
       "name": "ОргСинт ап",
-      "price": 16.13,
-      "chg": -0.06,
+      "price": 16.17,
+      "chg": 0.19,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.87
@@ -2544,15 +2670,6 @@
       "volatility": 0.21
     },
     {
-      "sym": "UNKL",
-      "name": "ЮУНК ао",
-      "price": 3090.0,
-      "chg": 0.32,
-      "dec": 0,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.32
-    },
-    {
       "sym": "BLNG",
       "name": "Белон ао",
       "price": 7.52,
@@ -2560,6 +2677,24 @@
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.4
+    },
+    {
+      "sym": "MGTS",
+      "name": "МГТС-5ао",
+      "price": 1470.0,
+      "chg": -0.54,
+      "dec": 0,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.14
+    },
+    {
+      "sym": "SBRI",
+      "name": "SBRI ETF",
+      "price": 9.71,
+      "chg": 0.91,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.44
     },
     {
       "sym": "IGSTP",
@@ -2571,6 +2706,15 @@
       "volatility": 0.0
     },
     {
+      "sym": "CNTLP",
+      "name": "Телеграф-п",
+      "price": 4.48,
+      "chg": -0.44,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.22
+    },
+    {
       "sym": "KGKC",
       "name": "КурганГКао",
       "price": 38.0,
@@ -2578,42 +2722,6 @@
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 2.63
-    },
-    {
-      "sym": "SBRI",
-      "name": "SBRI ETF",
-      "price": 9.714,
-      "chg": 0.96,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.44
-    },
-    {
-      "sym": "CNTLP",
-      "name": "Телеграф-п",
-      "price": 4.47,
-      "chg": -0.67,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.22
-    },
-    {
-      "sym": "TORSP",
-      "name": "РСТомск ап",
-      "price": 0.524,
-      "chg": -0.19,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.0
-    },
-    {
-      "sym": "SBBC",
-      "name": "SBBC ETF",
-      "price": 9.097,
-      "chg": 0.15,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.2
     },
     {
       "sym": "AKBC",
@@ -2625,15 +2733,6 @@
       "volatility": 0.69
     },
     {
-      "sym": "BRZL",
-      "name": "БурЗолото",
-      "price": 1224.0,
-      "chg": 0.0,
-      "dec": 0,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.33
-    },
-    {
       "sym": "ELMT",
       "name": "iЭлемент",
       "price": 0.09675,
@@ -2643,13 +2742,13 @@
       "volatility": 0.88
     },
     {
-      "sym": "AMGL",
-      "name": "AMGL ETF",
-      "price": 137.0,
-      "chg": -0.58,
-      "dec": 2,
+      "sym": "BRZL",
+      "name": "БурЗолото",
+      "price": 1224.0,
+      "chg": 0.0,
+      "dec": 0,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.29
+      "volatility": 0.33
     },
     {
       "sym": "SBDS",
@@ -2661,37 +2760,10 @@
       "volatility": 1.4
     },
     {
-      "sym": "KRSBP",
-      "name": "Красэсб ап",
-      "price": 20.28,
-      "chg": 0.5,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.0
-    },
-    {
-      "sym": "NFAZ",
-      "name": "НЕФАЗ",
-      "price": 200.0,
-      "chg": 1.78,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.51
-    },
-    {
-      "sym": "SBHI",
-      "name": "SBHI ETF",
-      "price": 6.404,
-      "chg": 0.03,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.53
-    },
-    {
       "sym": "SIPO",
       "name": "SIPO ETF",
-      "price": 6.644,
-      "chg": 0.61,
+      "price": 6.619,
+      "chg": 0.23,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 2.8
@@ -2715,15 +2787,6 @@
       "volatility": 0.0
     },
     {
-      "sym": "TOPS",
-      "name": "TOPS ETF",
-      "price": 107.34,
-      "chg": 0.25,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.6
-    },
-    {
       "sym": "SVET",
       "name": "Светофор",
       "price": 9.76,
@@ -2733,28 +2796,73 @@
       "volatility": 0.62
     },
     {
+      "sym": "CHMK",
+      "name": "ЧМК ао",
+      "price": 3215.0,
+      "chg": 0.31,
+      "dec": 0,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.0
+    },
+    {
+      "sym": "TOPS",
+      "name": "TOPS ETF",
+      "price": 107.34,
+      "chg": 0.25,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.6
+    },
+    {
       "sym": "AKHT",
       "name": "AKHT ETF",
-      "price": 89.0,
-      "chg": 0.34,
+      "price": 89.01,
+      "chg": 0.35,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.33
     },
     {
-      "sym": "CARM",
-      "name": "СТГ",
-      "price": 0.6935,
-      "chg": -0.36,
+      "sym": "TASB",
+      "name": "ТамбЭнСб",
+      "price": 1.388,
+      "chg": -1.0,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.65
+      "volatility": 0.0
+    },
+    {
+      "sym": "OLIQ",
+      "name": "OLIQ ETF",
+      "price": 103.6,
+      "chg": 0.04,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.01
+    },
+    {
+      "sym": "TUZA",
+      "name": "ТЗА ао",
+      "price": 85.4,
+      "chg": -0.7,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.0
+    },
+    {
+      "sym": "AKAI",
+      "name": "AKAI ETF",
+      "price": 95.84,
+      "chg": 0.02,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.75
     },
     {
       "sym": "TBRU",
       "name": "TBRU ETF",
-      "price": 8.46,
-      "chg": 0.0,
+      "price": 8.49,
+      "chg": 0.35,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.35
@@ -2778,15 +2886,6 @@
       "volatility": 0.0
     },
     {
-      "sym": "OLIQ",
-      "name": "OLIQ ETF",
-      "price": 103.59,
-      "chg": 0.03,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.01
-    },
-    {
       "sym": "KUZB",
       "name": "КузнецкийБ",
       "price": 0.0259,
@@ -2796,15 +2895,6 @@
       "volatility": 0.39
     },
     {
-      "sym": "AKAI",
-      "name": "AKAI ETF",
-      "price": 95.82,
-      "chg": 0.0,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.75
-    },
-    {
       "sym": "URKZ",
       "name": "УрКузница",
       "price": 184.0,
@@ -2812,6 +2902,24 @@
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.65
+    },
+    {
+      "sym": "MSTT",
+      "name": "Мостотрест",
+      "price": 68.5,
+      "chg": 0.0,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.07
+    },
+    {
+      "sym": "VLHZ",
+      "name": "ВХЗ-ао",
+      "price": 131.8,
+      "chg": 0.46,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.0
     },
     {
       "sym": "RU000A108VR7",
@@ -2825,8 +2933,8 @@
     {
       "sym": "SCLI",
       "name": "SCLI ETF",
-      "price": 7.2205,
-      "chg": 0.0,
+      "price": 7.223,
+      "chg": 0.03,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.03
@@ -2879,11 +2987,20 @@
     {
       "sym": "PSRE",
       "name": "PSRE ETF",
-      "price": 8.89,
-      "chg": 0.03,
+      "price": 8.888,
+      "chg": 0.01,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.24
+    },
+    {
+      "sym": "TOFZ",
+      "name": "TOFZ ETF",
+      "price": 13.82,
+      "chg": 0.36,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.0
     },
     {
       "sym": "MONY",
@@ -2895,10 +3012,10 @@
       "volatility": 0.0
     },
     {
-      "sym": "TOFZ",
-      "name": "TOFZ ETF",
-      "price": 13.82,
-      "chg": 0.36,
+      "sym": "YAKG",
+      "name": "ЯТЭК ао",
+      "price": 34.5,
+      "chg": -0.29,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.0
@@ -2922,6 +3039,15 @@
       "volatility": 0.27
     },
     {
+      "sym": "SBSC",
+      "name": "SBSC ETF",
+      "price": 6.5,
+      "chg": 0.7,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 0.77
+    },
+    {
       "sym": "NFKL",
       "name": "NFKL ETF",
       "price": 103.34,
@@ -2931,28 +3057,19 @@
       "volatility": 0.1
     },
     {
-      "sym": "SBSC",
-      "name": "SBSC ETF",
-      "price": 6.5,
-      "chg": 0.7,
+      "sym": "PSRB",
+      "name": "PSRB ETF",
+      "price": 13.947,
+      "chg": 0.0,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 0.67
+      "volatility": 0.0
     },
     {
       "sym": "AMGB",
       "name": "AMGB ETF",
       "price": 127.8,
       "chg": 0.24,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.0
-    },
-    {
-      "sym": "PSRB",
-      "name": "PSRB ETF",
-      "price": 13.947,
-      "chg": 0.0,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.0
@@ -2978,31 +3095,31 @@
       "volatility": 3.08
     },
     {
+      "sym": "YKEN",
+      "name": "Якутскэнрг",
+      "price": 0.407,
+      "chg": 2.52,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 1.76
+    },
+    {
       "sym": "WTCMP",
       "name": "ЦМТ ап",
-      "price": 13.04,
-      "chg": 2.35,
+      "price": 13.02,
+      "chg": 2.2,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 1.41
     },
     {
-      "sym": "DZRDP",
-      "name": "ДонскЗР п",
-      "price": 1800.0,
-      "chg": 2.27,
-      "dec": 0,
-      "vol": "0.00 млрд ₽",
-      "volatility": 1.14
-    },
-    {
-      "sym": "YKEN",
-      "name": "Якутскэнрг",
-      "price": 0.405,
-      "chg": 2.02,
+      "sym": "RGSS",
+      "name": "РГС СК ао",
+      "price": 0.1832,
+      "chg": 1.78,
       "dec": 2,
       "vol": "0.00 млрд ₽",
-      "volatility": 1.76
+      "volatility": 4.44
     },
     {
       "sym": "NFAZ",
@@ -3014,13 +3131,22 @@
       "volatility": 0.51
     },
     {
-      "sym": "RGSS",
-      "name": "РГС СК ао",
-      "price": 0.183,
-      "chg": 1.67,
-      "dec": 2,
+      "sym": "DZRDP",
+      "name": "ДонскЗР п",
+      "price": 1790.0,
+      "chg": 1.7,
+      "dec": 0,
       "vol": "0.00 млрд ₽",
-      "volatility": 4.44
+      "volatility": 1.14
+    },
+    {
+      "sym": "DZRD",
+      "name": "ДонскЗР",
+      "price": 1210.0,
+      "chg": 1.68,
+      "dec": 0,
+      "vol": "0.00 млрд ₽",
+      "volatility": 2.1
     },
     {
       "sym": "YRSBP",
@@ -3039,15 +3165,6 @@
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 0.85
-    },
-    {
-      "sym": "DZRD",
-      "name": "ДонскЗР",
-      "price": 1205.0,
-      "chg": 1.26,
-      "dec": 0,
-      "vol": "0.00 млрд ₽",
-      "volatility": 1.68
     }
   ],
   "losers": [
@@ -3088,6 +3205,24 @@
       "volatility": 1.72
     },
     {
+      "sym": "JNOSP",
+      "name": "Слав-ЯНОСп",
+      "price": 11.74,
+      "chg": -2.0,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 2.34
+    },
+    {
+      "sym": "INCB",
+      "name": "Инкаб",
+      "price": 62.84,
+      "chg": -1.72,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 2.88
+    },
+    {
       "sym": "OMZZP",
       "name": "ОМЗ-ап",
       "price": 10580.0,
@@ -3117,37 +3252,19 @@
     {
       "sym": "GEMA",
       "name": "iММЦБ ао",
-      "price": 99.6,
-      "chg": -1.48,
+      "price": 99.5,
+      "chg": -1.58,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 2.87
-    },
-    {
-      "sym": "KRKOP",
-      "name": "ТКЗКК ап",
-      "price": 12.78,
-      "chg": -1.39,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 0.15
-    },
-    {
-      "sym": "INCB",
-      "name": "Инкаб",
-      "price": 63.08,
-      "chg": -1.35,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 1.6
     }
   ],
   "volatile": [
     {
       "sym": "OKEY",
       "name": "OKEY-гдр",
-      "price": 50.75,
-      "chg": -0.14,
+      "price": 50.67,
+      "chg": -0.3,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 5.53
@@ -3155,8 +3272,8 @@
     {
       "sym": "RGSS",
       "name": "РГС СК ао",
-      "price": 0.183,
-      "chg": 1.67,
+      "price": 0.1832,
+      "chg": 1.78,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 4.44
@@ -3164,8 +3281,8 @@
     {
       "sym": "LMBZ",
       "name": "Ламбумиз",
-      "price": 462.0,
-      "chg": 0.54,
+      "price": 462.5,
+      "chg": 0.65,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 3.16
@@ -3173,8 +3290,8 @@
     {
       "sym": "KCHEP",
       "name": "КамчатЭ ап",
-      "price": 1.105,
-      "chg": -0.45,
+      "price": 1.11,
+      "chg": 0.0,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 3.15
@@ -3207,10 +3324,19 @@
       "volatility": 2.97
     },
     {
+      "sym": "INCB",
+      "name": "Инкаб",
+      "price": 62.84,
+      "chg": -1.72,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 2.88
+    },
+    {
       "sym": "GEMA",
       "name": "iММЦБ ао",
-      "price": 99.6,
-      "chg": -1.48,
+      "price": 99.5,
+      "chg": -1.58,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 2.87
@@ -3218,20 +3344,11 @@
     {
       "sym": "SIPO",
       "name": "SIPO ETF",
-      "price": 6.644,
-      "chg": 0.61,
+      "price": 6.619,
+      "chg": 0.23,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 2.8
-    },
-    {
-      "sym": "VRSB",
-      "name": "ТНСэнВорон",
-      "price": 242.0,
-      "chg": -1.02,
-      "dec": 2,
-      "vol": "0.00 млрд ₽",
-      "volatility": 2.66
     }
   ],
   "trends": {
@@ -3329,7 +3446,7 @@
       103.41,
       106.99,
       104.37,
-      105.48
+      105.3
     ]
   },
   "bonds": [
@@ -3428,10 +3545,10 @@
     {
       "sym": "OZON",
       "name": "Озон",
-      "price": 2952.0,
-      "chg": 0.94,
+      "price": 2949.5,
+      "chg": 0.85,
       "dec": 0,
-      "vol": "0.34 млрд ₽",
+      "vol": "0.38 млрд ₽",
       "volatility": 1.42,
       "candles": [
         2726.0,
@@ -3493,7 +3610,7 @@
         2940.0,
         2989.0,
         2924.5,
-        2955.5
+        2949.5
       ],
       "fund": {
         "market_cap": 630737824828.5,
@@ -3526,10 +3643,10 @@
     {
       "sym": "GAZP",
       "name": "ГАЗПРОМ ао",
-      "price": 99.11,
-      "chg": 0.33,
+      "price": 99.05,
+      "chg": 0.27,
       "dec": 2,
-      "vol": "0.17 млрд ₽",
+      "vol": "0.18 млрд ₽",
       "volatility": 0.48,
       "candles": [
         90.17,
@@ -3591,7 +3708,7 @@
         102.6,
         101.16,
         98.78,
-        99.01
+        99.02
       ],
       "fund": {
         "market_cap": 2002542456211.0,
@@ -3622,12 +3739,110 @@
       }
     },
     {
+      "sym": "T",
+      "name": "Т-Техно ао",
+      "price": 251.24,
+      "chg": 0.26,
+      "dec": 2,
+      "vol": "0.18 млрд ₽",
+      "volatility": 0.42,
+      "candles": [
+        248.88,
+        261.0,
+        264.76,
+        261.62,
+        264.02,
+        263.88,
+        267.4,
+        264.82,
+        266.82,
+        272.32,
+        272.58,
+        279.3,
+        280.58,
+        281.08,
+        278.82,
+        279.18,
+        278.88,
+        283.32,
+        277.84,
+        264.8,
+        255.16,
+        252.76,
+        261.1,
+        260.14,
+        254.28,
+        257.24,
+        253.98,
+        253.0,
+        248.48,
+        254.16,
+        248.64,
+        252.2,
+        249.1,
+        249.52,
+        249.56,
+        255.18,
+        253.14,
+        254.62,
+        262.0,
+        264.5,
+        264.74,
+        260.0,
+        263.94,
+        262.1,
+        259.96,
+        262.5,
+        261.4,
+        265.58,
+        262.86,
+        255.78,
+        252.1,
+        253.4,
+        253.24,
+        252.9,
+        255.62,
+        258.18,
+        260.34,
+        257.74,
+        250.58,
+        251.3
+      ],
+      "fund": {
+        "market_cap": 684529943957.6,
+        "pe_ttm": 5.07,
+        "pb_ttm": 0.79,
+        "ps_ttm": 0.46,
+        "ev_ebitda": null,
+        "net_debt_ebitda": null,
+        "debt_equity": null,
+        "roe": 18.2,
+        "roic": null,
+        "roa": 2.3,
+        "net_margin": null,
+        "revenue_ttm": 1487754000000.0,
+        "net_income_ttm": 134903000000.0,
+        "ebitda_ttm": 0.0,
+        "growth_1y": 51.05,
+        "growth_3y": 54.49,
+        "growth_5y": 544.38,
+        "div_yield": 6.35,
+        "div_payout": 24.2,
+        "beta": 0.89,
+        "high_52w": 354.3,
+        "low_52w": 220.1,
+        "free_cash_flow": 0.0,
+        "eps_ttm": 0.0,
+        "free_float": 0.51
+      }
+    },
+    {
       "sym": "SBFR",
       "name": "SBFR ETF",
       "price": 15.59,
       "chg": 0.03,
       "dec": 2,
-      "vol": "0.15 млрд ₽",
+      "vol": "0.17 млрд ₽",
       "volatility": 0.13,
       "candles": [
         15.17,
@@ -3699,7 +3914,7 @@
       "price": 19.4955,
       "chg": 0.04,
       "dec": 2,
-      "vol": "0.13 млрд ₽",
+      "vol": "0.15 млрд ₽",
       "volatility": 0.01,
       "candles": [
         19.01,
@@ -3768,10 +3983,10 @@
     {
       "sym": "YDEX",
       "name": "ЯНДЕКС",
-      "price": 3594.5,
-      "chg": 0.25,
+      "price": 3593.0,
+      "chg": 0.21,
       "dec": 0,
-      "vol": "0.13 млрд ₽",
+      "vol": "0.15 млрд ₽",
       "volatility": 0.43,
       "candles": [
         3665.0,
@@ -3833,7 +4048,7 @@
         3774.5,
         3733.0,
         3585.5,
-        3594.5
+        3593.0
       ],
       "fund": {
         "market_cap": 1454666834628.0,
@@ -3869,7 +4084,7 @@
       "price": 178.41,
       "chg": 0.03,
       "dec": 2,
-      "vol": "0.11 млрд ₽",
+      "vol": "0.14 млрд ₽",
       "volatility": 0.01,
       "candles": [
         174.1,
@@ -3941,7 +4156,7 @@
       "price": 2.0961,
       "chg": 0.04,
       "dec": 2,
-      "vol": "0.10 млрд ₽",
+      "vol": "0.12 млрд ₽",
       "volatility": 0.0,
       "candles": [
         2.04,
@@ -4010,8 +4225,8 @@
     {
       "sym": "ROSN",
       "name": "Роснефть",
-      "price": 361.05,
-      "chg": 0.42,
+      "price": 360.55,
+      "chg": 0.28,
       "dec": 2,
       "vol": "0.09 млрд ₽",
       "volatility": 0.49,
@@ -4075,7 +4290,7 @@
         366.9,
         368.1,
         359.55,
-        360.75
+        361.05
       ],
       "fund": {
         "market_cap": 3344255010154.35,
@@ -4108,8 +4323,8 @@
     {
       "sym": "PLZL",
       "name": "Полюс",
-      "price": 1005.8,
-      "chg": 0.04,
+      "price": 1007.2,
+      "chg": 0.18,
       "dec": 0,
       "vol": "0.07 млрд ₽",
       "volatility": 1.15,
@@ -4173,7 +4388,7 @@
         945.2,
         985.2,
         1005.4,
-        1006.6
+        1007.0
       ],
       "fund": {
         "market_cap": 1495674845899.2,
@@ -4206,8 +4421,8 @@
     {
       "sym": "SBER",
       "name": "Сбербанк",
-      "price": 276.33,
-      "chg": -0.01,
+      "price": 276.41,
+      "chg": 0.02,
       "dec": 2,
       "vol": "0.07 млрд ₽",
       "volatility": 0.2,
@@ -4304,10 +4519,10 @@
     {
       "sym": "NVTK",
       "name": "Новатэк ао",
-      "price": 1056.7,
-      "chg": 0.45,
+      "price": 1054.4,
+      "chg": 0.23,
       "dec": 0,
-      "vol": "0.06 млрд ₽",
+      "vol": "0.07 млрд ₽",
       "volatility": 0.57,
       "candles": [
         1001.5,
@@ -4369,7 +4584,7 @@
         1080.6,
         1083.0,
         1052.0,
-        1055.5
+        1054.4
       ],
       "fund": {
         "market_cap": 2817995598600.0,
@@ -4400,110 +4615,12 @@
       }
     },
     {
-      "sym": "T",
-      "name": "Т-Техно ао",
-      "price": 250.94,
-      "chg": 0.14,
-      "dec": 2,
-      "vol": "0.06 млрд ₽",
-      "volatility": 0.22,
-      "candles": [
-        248.88,
-        261.0,
-        264.76,
-        261.62,
-        264.02,
-        263.88,
-        267.4,
-        264.82,
-        266.82,
-        272.32,
-        272.58,
-        279.3,
-        280.58,
-        281.08,
-        278.82,
-        279.18,
-        278.88,
-        283.32,
-        277.84,
-        264.8,
-        255.16,
-        252.76,
-        261.1,
-        260.14,
-        254.28,
-        257.24,
-        253.98,
-        253.0,
-        248.48,
-        254.16,
-        248.64,
-        252.2,
-        249.1,
-        249.52,
-        249.56,
-        255.18,
-        253.14,
-        254.62,
-        262.0,
-        264.5,
-        264.74,
-        260.0,
-        263.94,
-        262.1,
-        259.96,
-        262.5,
-        261.4,
-        265.58,
-        262.86,
-        255.78,
-        252.1,
-        253.4,
-        253.24,
-        252.9,
-        255.62,
-        258.18,
-        260.34,
-        257.74,
-        250.58,
-        251.2
-      ],
-      "fund": {
-        "market_cap": 684529943957.6,
-        "pe_ttm": 5.07,
-        "pb_ttm": 0.79,
-        "ps_ttm": 0.46,
-        "ev_ebitda": null,
-        "net_debt_ebitda": null,
-        "debt_equity": null,
-        "roe": 18.2,
-        "roic": null,
-        "roa": 2.3,
-        "net_margin": null,
-        "revenue_ttm": 1487754000000.0,
-        "net_income_ttm": 134903000000.0,
-        "ebitda_ttm": 0.0,
-        "growth_1y": 51.05,
-        "growth_3y": 54.49,
-        "growth_5y": 544.38,
-        "div_yield": 6.35,
-        "div_payout": 24.2,
-        "beta": 0.89,
-        "high_52w": 354.3,
-        "low_52w": 220.1,
-        "free_cash_flow": 0.0,
-        "eps_ttm": 0.0,
-        "free_float": 0.51
-      }
-    },
-    {
       "sym": "LKOH",
       "name": "ЛУКОЙЛ",
-      "price": 5368.0,
-      "chg": -0.11,
+      "price": 5365.5,
+      "chg": -0.16,
       "dec": 0,
-      "vol": "0.05 млрд ₽",
+      "vol": "0.06 млрд ₽",
       "volatility": 0.47,
       "candles": [
         4646.5,
@@ -4565,7 +4682,7 @@
         5434.5,
         5419.5,
         5374.0,
-        5366.5
+        5366.0
       ],
       "fund": {
         "market_cap": 2981054941005.0,
@@ -4598,8 +4715,8 @@
     {
       "sym": "GMKN",
       "name": "ГМКНорНик",
-      "price": 118.5,
-      "chg": 0.15,
+      "price": 118.44,
+      "chg": 0.1,
       "dec": 2,
       "vol": "0.05 млрд ₽",
       "volatility": 0.42,
@@ -4663,7 +4780,7 @@
         127.52,
         119.68,
         118.32,
-        118.46
+        118.54
       ],
       "fund": {
         "market_cap": 1753954617178.0,
@@ -4768,8 +4885,8 @@
     {
       "sym": "VTBR",
       "name": "ВТБ ао",
-      "price": 51.32,
-      "chg": 0.22,
+      "price": 51.31,
+      "chg": 0.21,
       "dec": 2,
       "vol": "0.04 млрд ₽",
       "volatility": 0.34,
@@ -4833,7 +4950,7 @@
         51.78,
         51.2,
         51.2,
-        51.31
+        51.3
       ],
       "fund": {
         "market_cap": 701395966900.08,
@@ -4866,8 +4983,8 @@
     {
       "sym": "SBRB",
       "name": "SBRB ETF",
-      "price": 19.038,
-      "chg": 0.04,
+      "price": 19.039,
+      "chg": 0.05,
       "dec": 2,
       "vol": "0.03 млрд ₽",
       "volatility": 0.13,
@@ -5010,8 +5127,8 @@
     {
       "sym": "TPAY",
       "name": "TPAY ETF",
-      "price": 102.1,
-      "chg": 0.04,
+      "price": 102.08,
+      "chg": 0.02,
       "dec": 2,
       "vol": "0.03 млрд ₽",
       "volatility": 0.14,
@@ -5075,84 +5192,292 @@
         102.06,
         101.93,
         102.06,
-        102.1
+        102.09
       ],
       "fund": {}
     },
     {
-      "sym": "SPBE",
-      "name": "СПБ Биржа",
-      "price": 141.1,
-      "chg": -0.56,
+      "sym": "BSPB",
+      "name": "БСП ао",
+      "price": 263.65,
+      "chg": 0.83,
       "dec": 2,
       "vol": "0.02 млрд ₽",
-      "volatility": 1.2,
+      "volatility": 0.94,
       "candles": [
-        113.0,
-        117.5,
-        118.5,
-        115.9,
-        118.8,
-        117.5,
-        120.3,
-        121.0,
-        123.8,
-        132.8,
-        129.0,
-        130.7,
-        126.8,
-        122.7,
-        126.6,
-        126.6,
-        132.6,
-        135.7,
-        128.6,
-        123.8,
-        119.3,
-        119.3,
-        122.0,
-        120.9,
-        118.7,
-        121.2,
-        120.1,
-        119.1,
-        121.9,
-        126.9,
-        118.9,
-        123.1,
-        124.3,
-        124.4,
-        127.5,
-        133.7,
-        129.3,
-        132.9,
-        140.1,
-        145.1,
-        143.6,
-        140.2,
-        143.8,
-        142.2,
-        139.5,
-        140.7,
-        140.3,
-        143.3,
-        139.6,
-        136.8,
-        136.7,
-        135.7,
-        134.6,
-        135.4,
-        137.1,
-        141.0,
-        142.5,
-        140.3,
-        141.9,
-        140.9
+        240.8,
+        250.16,
+        253.25,
+        252.93,
+        266.0,
+        263.45,
+        268.13,
+        265.83,
+        262.8,
+        265.46,
+        267.6,
+        269.47,
+        267.69,
+        266.93,
+        267.77,
+        270.17,
+        270.44,
+        271.11,
+        264.91,
+        254.82,
+        249.72,
+        241.55,
+        247.77,
+        245.39,
+        238.92,
+        243.36,
+        242.45,
+        242.5,
+        235.07,
+        235.79,
+        232.92,
+        236.3,
+        234.77,
+        235.64,
+        236.79,
+        236.1,
+        240.61,
+        241.36,
+        246.0,
+        249.73,
+        254.46,
+        254.99,
+        254.0,
+        253.25,
+        251.29,
+        252.95,
+        252.21,
+        252.32,
+        252.79,
+        251.61,
+        253.31,
+        252.51,
+        252.46,
+        252.16,
+        252.84,
+        254.84,
+        262.3,
+        262.49,
+        261.49,
+        263.42
       ],
       "fund": {}
     }
   ],
   "news": [
+    {
+      "cat": "company",
+      "title": "Медики рассказали о состоянии моряков с загоревшегося судна на Камчатке",
+      "text": "Пожар на судне у Камчатки: пострадавшие моряки, инцидент не влияет на рынки",
+      "sent": "flat",
+      "impact": 1,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": true,
+      "url": "https://tass.ru/proisshestviya/28154281",
+      "source": "TASS",
+      "image": ""
+    },
+    {
+      "cat": "company",
+      "title": "Участники командно-штабных учений ОДКБ прибыли в Россию",
+      "text": "Учения ОДКБ в России: военный контекст, прямого влияния на рынки нет",
+      "sent": "flat",
+      "impact": 1,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": false,
+      "url": "https://tass.ru/armiya-i-opk/28154291",
+      "source": "TASS",
+      "image": ""
+    },
+    {
+      "cat": "company",
+      "title": "Разведчики \"Запада\" уничтожили Т-64 ВСУ в ходе марш-броска в Харьковской области",
+      "text": "Уничтожение Т-64 ВСУ — военная новость, на рынки не влияет",
+      "sent": "flat",
+      "impact": 1,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": false,
+      "url": "https://tass.ru/armiya-i-opk/28154279",
+      "source": "TASS",
+      "image": ""
+    },
+    {
+      "cat": "company",
+      "title": "Фол за игру словами. Как машины и люди ломали трансферы, репутации и заголовки",
+      "text": "Скандал вокруг трансферов и репутаций: тема без прямого рыночного эффекта",
+      "sent": "flat",
+      "impact": 1,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": false,
+      "url": "https://tass.ru/sport/28154061",
+      "source": "TASS",
+      "image": ""
+    },
+    {
+      "cat": "company",
+      "title": "В ЛНР из-за атак ВСУ за сутки погибли четыре человека",
+      "text": "Погибшие в ЛНР — гуманитарная новость, на рынки не влияет",
+      "sent": "flat",
+      "impact": 1,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": false,
+      "url": "https://tass.ru/proisshestviya/28154275",
+      "source": "TASS",
+      "image": ""
+    },
+    {
+      "cat": "company",
+      "title": "Портрет собаки британского художника Дэвида Хокни выставили на торги за $3,3 млн",
+      "text": "Портрет собаки Хокни за $3,3 млн — арт-рынок, влияние на макро рынки нулевое",
+      "sent": "flat",
+      "impact": 1,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": false,
+      "url": "https://tass.ru/obschestvo/28154269",
+      "source": "TASS",
+      "image": ""
+    },
+    {
+      "cat": "company",
+      "title": "\"Инсайдер\": в некоторых регионах Украины наблюдаются проблемы с интернетом",
+      "text": "Перебои с интернетом в ряде регионов Украины — локальный инцидент, на рынки не влияет",
+      "sent": "flat",
+      "impact": 1,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": false,
+      "url": "https://tass.ru/obschestvo/28154253",
+      "source": "TASS",
+      "image": ""
+    },
+    {
+      "cat": "company",
+      "title": "Пленный из ВСУ рассказал, как уснул на посту и пропустил российских бойцов",
+      "text": "Слова пленного ВСУ — военная новость, рыночного значения не имеет",
+      "sent": "flat",
+      "impact": 1,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": false,
+      "url": "https://tass.ru/armiya-i-opk/28154265",
+      "source": "TASS",
+      "image": ""
+    },
+    {
+      "cat": "company",
+      "title": "В Сумах произошли взрывы",
+      "text": "Взрывы в Сумах — конфликтная новость, прямого влияния на рынки нет",
+      "sent": "flat",
+      "impact": 1,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": false,
+      "url": "https://tass.ru/proisshestviya/28154263",
+      "source": "TASS",
+      "image": ""
+    },
+    {
+      "cat": "company",
+      "title": "В Оренбургской области потушили ландшафтный пожар",
+      "text": "Пожар в Оренбургской области потушен — инцидент локальный, на рынки не влияет",
+      "sent": "flat",
+      "impact": 1,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": false,
+      "url": "https://tass.ru/proisshestviya/28154243",
+      "source": "TASS",
+      "image": ""
+    },
+    {
+      "cat": "company",
+      "title": "На Камчатке приостановили операцию по поиску четверых пропавших при пожаре на судне",
+      "text": "",
+      "sent": "flat",
+      "impact": 2,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": true,
+      "url": "https://tass.ru/obschestvo/28154241",
+      "source": "TASS",
+      "image": ""
+    },
+    {
+      "cat": "company",
+      "title": "В аэропорту Сочи на 10 часов и более задерживаются 12 рейсов",
+      "text": "",
+      "sent": "flat",
+      "impact": 2,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": false,
+      "url": "https://tass.ru/ekonomika/28154211",
+      "source": "TASS",
+      "image": ""
+    },
+    {
+      "cat": "company",
+      "title": "У украинских телеканалов начались проблемы из-за взрывов в дата-центрах",
+      "text": "",
+      "sent": "flat",
+      "impact": 2,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": false,
+      "url": "https://tass.ru/obschestvo/28154231",
+      "source": "TASS",
+      "image": ""
+    },
+    {
+      "cat": "company",
+      "title": "ВС РФ уничтожили живую силу и технику ВСУ на славянско-краматорском направлении",
+      "text": "",
+      "sent": "flat",
+      "impact": 2,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": false,
+      "url": "https://tass.ru/armiya-i-opk/28154235",
+      "source": "TASS",
+      "image": ""
+    },
+    {
+      "cat": "company",
+      "title": "Xinhua: совместная борьба КНР и США с наркотиками принесла ощутимые результаты",
+      "text": "",
+      "sent": "flat",
+      "impact": 2,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": false,
+      "url": "https://tass.ru/mezhdunarodnaya-panorama/28154219",
+      "source": "TASS",
+      "image": ""
+    },
+    {
+      "cat": "company",
+      "title": "Депутат Рады Дубинский заявил о переломной точке в конфликте с РФ",
+      "text": "",
+      "sent": "flat",
+      "impact": 2,
+      "time": "",
+      "ts": 1790415368,
+      "urgent": false,
+      "url": "https://tass.ru/mezhdunarodnaya-panorama/28154223",
+      "source": "TASS",
+      "image": ""
+    },
     {
       "cat": "fx",
       "title": "В Москве пенсионерка отдала мошенникам более 23 млн рублей",
@@ -5160,7 +5485,7 @@
       "sent": "down",
       "impact": 1,
       "time": "",
-      "ts": 1790413426,
+      "ts": 1790415368,
       "urgent": false,
       "url": "https://tass.ru/proisshestviya/28154215",
       "source": "TASS",
@@ -5173,7 +5498,7 @@
       "sent": "flat",
       "impact": 1,
       "time": "",
-      "ts": 1790413426,
+      "ts": 1790415368,
       "urgent": false,
       "url": "https://tass.ru/obschestvo/28154205",
       "source": "TASS",
@@ -5186,7 +5511,7 @@
       "sent": "flat",
       "impact": 1,
       "time": "",
-      "ts": 1790413426,
+      "ts": 1790415368,
       "urgent": false,
       "url": "https://tass.ru/obschestvo/28154213",
       "source": "TASS",
@@ -5199,7 +5524,7 @@
       "sent": "down",
       "impact": 2,
       "time": "",
-      "ts": 1790413426,
+      "ts": 1790415368,
       "urgent": false,
       "url": "https://tass.ru/armiya-i-opk/28154221",
       "source": "TASS",
@@ -5212,7 +5537,7 @@
       "sent": "up",
       "impact": 2,
       "time": "",
-      "ts": 1790413426,
+      "ts": 1790415368,
       "urgent": true,
       "url": "https://tass.ru/obschestvo/28154173",
       "source": "TASS",
@@ -5225,7 +5550,7 @@
       "sent": "down",
       "impact": 2,
       "time": "",
-      "ts": 1790413426,
+      "ts": 1790415368,
       "urgent": false,
       "url": "https://tass.ru/obschestvo/28154177",
       "source": "TASS",
@@ -5233,12 +5558,12 @@
     },
     {
       "cat": "company",
-      "title": "ВС РФ сорвали две попытки выхода из окружения группы ВСУ в Харьковской области",
-      "text": "Срыв попыток прорыва ВСУ под Харьковом — укрепление позиций РФ в регионе",
-      "sent": "up",
+      "title": "ВС РФ сорвали две попытки выхода ВСУ из окружения в Харьковской области",
+      "text": "",
+      "sent": "flat",
       "impact": 2,
       "time": "",
-      "ts": 1790413426,
+      "ts": 1790415368,
       "urgent": false,
       "url": "https://tass.ru/armiya-i-opk/28154207",
       "source": "TASS",
@@ -5246,12 +5571,12 @@
     },
     {
       "cat": "company",
-      "title": "ВСУ в кольце окружения в Харьковской области за сутки потеряли более 50 солдат",
-      "text": "Потери ВСУ более 50 солдат за сутки — рост напряжённости на фронте",
-      "sent": "down",
+      "title": "ВСУ потеряли свыше 50 военных в окружении в Харьковской области",
+      "text": "",
+      "sent": "flat",
       "impact": 2,
       "time": "",
-      "ts": 1790413426,
+      "ts": 1790415368,
       "urgent": false,
       "url": "https://tass.ru/armiya-i-opk/28154203",
       "source": "TASS",
@@ -5264,7 +5589,7 @@
       "sent": "up",
       "impact": 2,
       "time": "",
-      "ts": 1790413426,
+      "ts": 1790415368,
       "urgent": false,
       "url": "https://tass.ru/armiya-i-opk/28154201",
       "source": "TASS",
@@ -5272,276 +5597,68 @@
     },
     {
       "cat": "company",
-      "title": "ВСУ провели массированную атаку БПЛА на Запорожскую область",
-      "text": "Массированная атака БПЛА на Запорожье — эскалация, риски для инфраструктуры",
-      "sent": "down",
-      "impact": 2,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": false,
-      "url": "https://tass.ru/proisshestviya/28154197",
-      "source": "TASS",
-      "image": ""
-    },
-    {
-      "cat": "company",
-      "title": "ВС РФ ведут бои за освобождение трех населенных пунктов в Харьковской области",
+      "title": "Россия и МАГАТЭ поддерживают конструктивные контакты, заявил Ульянов",
       "text": "",
       "sent": "flat",
       "impact": 2,
       "time": "",
-      "ts": 1790413426,
+      "ts": 1790415368,
       "urgent": false,
-      "url": "https://tass.ru/armiya-i-opk/28154195",
-      "source": "TASS",
-      "image": ""
+      "url": "https://ria.ru/20260926/ulyanov-2120421360.html",
+      "source": "RIA",
+      "image": "https://cdnn21.imgria.ru/images/07e9/0b/01/2052386888_0:65:3072:1792_650x0_80_0_0_953608bfbeabf011af88a838c5e3d57c.jpg"
     },
     {
       "cat": "company",
-      "title": "Силы ПВО сбили за сутки 1 222 беспилотника",
+      "title": "Самолет совершил вынужденную посадку в Анталье из-за смерти пассажирки",
       "text": "",
       "sent": "flat",
       "impact": 2,
       "time": "",
-      "ts": 1790413426,
+      "ts": 1790415368,
       "urgent": false,
-      "url": "https://tass.ru/armiya-i-opk/28154193",
-      "source": "TASS",
-      "image": ""
-    },
-    {
-      "cat": "company",
-      "title": "Лидеры КНР и США подтвердили необходимость снижения пошлин на товары в $30 млрд",
-      "text": "",
-      "sent": "flat",
-      "impact": 2,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": false,
-      "url": "https://tass.ru/ekonomika/28154187",
-      "source": "TASS",
-      "image": ""
-    },
-    {
-      "cat": "company",
-      "title": "Путин поздравил студентов и преподавателей РУТ со 130-летием вуза",
-      "text": "",
-      "sent": "flat",
-      "impact": 2,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": false,
-      "url": "https://tass.ru/obschestvo/28154181",
-      "source": "TASS",
-      "image": "https://cdn-media.tass.ru/fit/400x300_b2b00b17/tass/m2/uploads/i/20260709/9210733.jpg"
-    },
-    {
-      "cat": "company",
-      "title": "ВС РФ продолжают сжимать кольцо окружения ВСУ в Харьковской области",
-      "text": "",
-      "sent": "flat",
-      "impact": 2,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": false,
-      "url": "https://tass.ru/armiya-i-opk/28154189",
-      "source": "TASS",
-      "image": ""
-    },
-    {
-      "cat": "company",
-      "title": "Потери ВСУ составили порядка 1 350 военных за сутки",
-      "text": "",
-      "sent": "flat",
-      "impact": 2,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": false,
-      "url": "https://tass.ru/armiya-i-opk/28154185",
-      "source": "TASS",
-      "image": "https://cdn-media.tass.ru/fit/400x300_b2b00b17/tass/m2/uploads/i/20260926/9424269.jpg"
-    },
-    {
-      "cat": "company",
-      "title": "ВС РФ установили контроль над Петропавловкой и Лозовой в Харьковской области",
-      "text": "",
-      "sent": "flat",
-      "impact": 2,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": false,
-      "url": "https://tass.ru/armiya-i-opk/28154183",
-      "source": "TASS",
-      "image": "https://cdn-media.tass.ru/fit/400x300_b2b00b17/tass/m2/uploads/i/20260926/9424273.jpg"
-    },
-    {
-      "cat": "company",
-      "title": "В Ульяновской области приняли постановление о регистрации избранного губернатора",
-      "text": "",
-      "sent": "flat",
-      "impact": 2,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": true,
-      "url": "https://tass.ru/obschestvo/28154167",
-      "source": "TASS",
-      "image": ""
-    },
-    {
-      "cat": "company",
-      "title": "Вилли Саньоль ушел с поста главного тренера сборной Грузии по футболу",
-      "text": "",
-      "sent": "flat",
-      "impact": 2,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": false,
-      "url": "https://tass.ru/sport/28154169",
-      "source": "TASS",
-      "image": ""
-    },
-    {
-      "cat": "company",
-      "title": "Самую длинную лестницу в России закрыли для посещения из-за активности медведей",
-      "text": "",
-      "sent": "flat",
-      "impact": 2,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": false,
-      "url": "https://tass.ru/obschestvo/28154159",
-      "source": "TASS",
-      "image": ""
-    },
-    {
-      "cat": "company",
-      "title": "Би-би-си: вечные снега Папуа - Новой Гвинеи могут исчезнуть в ближайшие два года",
-      "text": "",
-      "sent": "flat",
-      "impact": 2,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": false,
-      "url": "https://tass.ru/obschestvo/28154161",
-      "source": "TASS",
-      "image": ""
-    },
-    {
-      "cat": "company",
-      "title": "Названа возможная причина взрыва вблизи Эльгинского месторождения в Якутии",
-      "text": "",
-      "sent": "flat",
-      "impact": 2,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": false,
-      "url": "https://tass.ru/proisshestviya/28154155",
-      "source": "TASS",
-      "image": ""
-    },
-    {
-      "cat": "company",
-      "title": "Лантратова отметила открытость к сотрудничеству Евразийского альянса омбудсменов",
-      "text": "ЕА омбудсменов открыт к сотрудничеству — дипломатическая инициатива, без влияния на рынки",
-      "sent": "flat",
-      "impact": 1,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": false,
-      "url": "https://tass.ru/obschestvo/28154153",
-      "source": "TASS",
-      "image": "https://cdn-media.tass.ru/fit/400x300_b2b00b17/tass/m2/uploads/i/20260812/9295287.jpg"
-    },
-    {
-      "cat": "company",
-      "title": "Около 26 тыс. жителей района Кубани остались без электричества из-за атаки БПЛА",
-      "text": "",
-      "sent": "flat",
-      "impact": 2,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": false,
-      "url": "https://tass.ru/proisshestviya/28154129",
-      "source": "TASS",
-      "image": ""
-    },
-    {
-      "cat": "company",
-      "title": "На Кубани возникшие при атаке БПЛА возгорания на двух предприятиях потушили",
-      "text": "Возгорания на предприятиях Кубани потушены — снижение негатива от атаки, локальный позитив",
-      "sent": "up",
-      "impact": 1,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": false,
-      "url": "https://tass.ru/proisshestviya/28154125",
-      "source": "TASS",
-      "image": ""
-    },
-    {
-      "cat": "company",
-      "title": "Новый посол России в КНДР прибыл в Пхеньян",
-      "text": "",
-      "sent": "flat",
-      "impact": 2,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": false,
-      "url": "https://ria.ru/20260926/posol-2120418697.html",
+      "url": "https://ria.ru/20260926/samolet-2120420558.html",
       "source": "RIA",
       "image": ""
     },
     {
       "cat": "company",
-      "title": "Москва впервые примет Международный форум особых экономических зон",
+      "title": "В Ивановской области пенсионерка погибла при пожаре в жилом доме",
       "text": "",
       "sent": "flat",
       "impact": 2,
       "time": "",
-      "ts": 1790413426,
+      "ts": 1790415368,
       "urgent": false,
-      "url": "https://ria.ru/20260926/forum-2120415122.html",
+      "url": "https://ria.ru/20260926/pozhar-2120420341.html",
       "source": "RIA",
-      "image": ""
+      "image": "https://cdnn21.imgria.ru/images/07ea/08/0e/2110898344_0:159:3076:1889_650x0_80_0_0_a2f423f9022c202146e387405c1c861d.jpg"
     },
     {
-      "cat": "company",
-      "title": "В Запорожской области из-за ночных атак ВСУ погибли три человека",
+      "cat": "fx",
+      "title": "В Петербурге грузовик столкнулся с маневровым локомотивом на ж/д переезде",
       "text": "",
       "sent": "flat",
       "impact": 2,
       "time": "",
-      "ts": 1790413426,
+      "ts": 1790415368,
       "urgent": false,
-      "url": "https://ria.ru/20260926/zaporozhskaya-2120418505.html",
+      "url": "https://ria.ru/20260926/peterburg-2120420203.html",
       "source": "RIA",
-      "image": "https://cdnn21.imgria.ru/images/07ea/08/0e/2110898446_0:141:3140:1907_650x0_80_0_0_765eb71b47caaed0d4566cb08aae9b8e.jpg"
+      "image": "https://cdnn21.imgria.ru/images/07e6/0b/18/1834036932_0:160:3072:1888_650x0_80_0_0_50783085aa7565ace36547c8aa9c3598.jpg"
     },
     {
-      "cat": "company",
-      "title": "ВСУ потеряли более 275 боевиков в зоне действий \"Востока\" за сутки",
+      "cat": "fx",
+      "title": "В Москве мошенники обманули 81-летнюю пенсионерку на 23,4 миллиона рублей",
       "text": "",
       "sent": "flat",
       "impact": 2,
       "time": "",
-      "ts": 1790413426,
+      "ts": 1790415368,
       "urgent": false,
-      "url": "https://ria.ru/20260926/svo-2120418262.html",
+      "url": "https://ria.ru/20260926/moshenniki-2120420035.html",
       "source": "RIA",
-      "image": "https://cdnn21.imgria.ru/images/07e9/08/08/2034085666_0:0:2517:1416_650x0_80_0_0_023c1865346796a7dbb577cf1570e628.jpg"
-    },
-    {
-      "cat": "company",
-      "title": "ВС России за сутки уничтожили до 40 окруженных боевиков ВСУ в Доброполье",
-      "text": "",
-      "sent": "flat",
-      "impact": 2,
-      "time": "",
-      "ts": 1790413426,
-      "urgent": false,
-      "url": "https://ria.ru/20260926/dnr-2120418167.html",
-      "source": "RIA",
-      "image": "https://cdnn21.imgria.ru/images/07ea/05/0e/2092492687_335:509:3071:2048_650x0_80_0_0_b37d7d51790f90c6c926767c00ae8c06.jpg"
+      "image": "https://cdnn21.imgria.ru/images/07e9/0b/0a/2053942717_0:26:3551:2023_650x0_80_0_0_1747e2dbc2ff100723ced06d45565bd0.jpg"
     }
   ],
   "digest": "",
@@ -5555,7 +5672,7 @@
       "cat": "company"
     }
   ],
-  "volume": 2.2,
+  "volume": 2.6,
   "movers_up": [
     {
       "sym": "UKUZ",
@@ -5576,22 +5693,22 @@
       "volatility": 3.08
     },
     {
+      "sym": "YKEN",
+      "name": "Якутскэнрг",
+      "price": 0.407,
+      "chg": 2.52,
+      "dec": 2,
+      "vol": "0.00 млрд ₽",
+      "volatility": 1.76
+    },
+    {
       "sym": "WTCMP",
       "name": "ЦМТ ап",
-      "price": 13.04,
-      "chg": 2.35,
+      "price": 13.02,
+      "chg": 2.2,
       "dec": 2,
       "vol": "0.00 млрд ₽",
       "volatility": 1.41
-    },
-    {
-      "sym": "DZRDP",
-      "name": "ДонскЗР п",
-      "price": 1800.0,
-      "chg": 2.27,
-      "dec": 0,
-      "vol": "0.00 млрд ₽",
-      "volatility": 1.14
     }
   ],
   "movers_down": [
